@@ -1,21 +1,47 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>TCF CMS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Netlify CMS -->
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     /* small centering while CMS loads */
-    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; display:flex; align-items:center; justify-content:center; height:100vh; }
-    .loading { text-align:center; color:#666; }
+    html,body{height:100%; margin:0}
+    .loading { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; display:flex; align-items:center; justify-content:center; height:100vh; color:#444; }
   </style>
 </head>
 <body>
-  <div class="loading">
-    <h3>TCF CMS</h3>
-    <p>Loading editor…</p>
-  </div>
+  <!-- optional mount point (helps avoid appendChild null errors) -->
+  <div id="nc-root" style="display:none"></div>
+
+  <!-- Netlify Identity widget (only for admin pages it's OK to include) -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <!-- Netlify CMS -->
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+
+  <script>
+    // Ensure cms mounts to our element if possible
+    (function() {
+      try {
+        // If the CMS tries to mount to its default and fails, mounting to our element helps
+        var root = document.getElementById('nc-root');
+        if (root) {
+          root.style.display = 'block';
+        }
+      } catch (e) {
+        console.warn('mount guard', e);
+      }
+    })();
+
+    // Show a minimal loading message if CMS is slow
+    document.body.insertAdjacentHTML('afterbegin', '<div class="loading" id="cms-loading">Loading editor…</div>');
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var l = document.getElementById('cms-loading');
+        if (l) l.style.display = 'none';
+      }, 2000);
+    });
+  </script>
 </body>
 </html>
