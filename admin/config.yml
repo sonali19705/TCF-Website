@@ -2,88 +2,152 @@ backend:
   name: git-gateway
   branch: main
 
-# Where uploaded images & PDFs will be stored
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
-# Optional, but recommended
-site_url: "https://tcf-ldce.netlify.app/"   # leave empty, Netlify auto-detects
+site_url: "https://tcf-ldce.netlify.app"
 
 collections:
-
-  # ----------------- BLOG -----------------
   - name: "blog"
     label: "Blog"
     folder: "content/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Cover Image", name: "cover_image", widget: "image" }
-      - { label: "Excerpt", name: "excerpt", widget: "text" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+      - label: "Author"
+        name: "author"
+        widget: "string"
+      - label: "Cover Image"
+        name: "cover_image"
+        widget: "image"
+      - label: "Excerpt"
+        name: "excerpt"
+        widget: "text"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
 
-  # ----------------- EVENTS -----------------
   - name: "events"
     label: "Events"
     folder: "content/events"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Location", name: "location", widget: "string" }
-      - { label: "Cover Image", name: "cover_image", widget: "image" }
-      - { label: "Excerpt", name: "excerpt", widget: "text" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Registration Link", name: "registration_link", widget: "string", required: false }
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+      - label: "Location"
+        name: "location"
+        widget: "string"
+      - label: "Cover Image"
+        name: "cover_image"
+        widget: "image"
+      - label: "Excerpt"
+        name: "excerpt"
+        widget: "text"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+      - label: "Registration Link"
+        name: "registration_link"
+        widget: "string"
+        required: false
 
-  # ----------------- MAGAZINES -----------------
   - name: "magazines"
     label: "Magazines"
     folder: "content/magazines"
     create: true
     slug: "{{year}}-{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Year", name: "year", widget: "number" }
-      - { label: "Cover Image", name: "cover_image", widget: "image" }
-      - { label: "PDF File", name: "pdf_file", widget: "file" }
-      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Year"
+        name: "year"
+        widget: "number"
+      - label: "Cover Image"
+        name: "cover_image"
+        widget: "image"
+      - label: "PDF File"
+        name: "pdf_file"
+        widget: "file"
+      - label: "Excerpt"
+        name: "excerpt"
+        widget: "text"
 
-  # ----------------- GALLERY -----------------
   - name: "gallery"
     label: "Gallery"
     folder: "content/gallery"
     create: true
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Caption", name: "caption", widget: "string" }
-      - { label: "Event Slug", name: "event_slug", widget: "string", required: false }
-      - { label: "Year", name: "year", widget: "number", required: false }
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Image"
+        name: "image"
+        widget: "image"
+      - label: "Caption"
+        name: "caption"
+        widget: "string"
+      - label: "Event Slug"
+        name: "event_slug"
+        widget: "string"
+        required: false
+      - label: "Year"
+        name: "year"
+        widget: "number"
+        required: false
 
-  # ----------------- TEAM -----------------
   - name: "team"
     label: "Team"
     folder: "content/team"
     create: true
     fields:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Role", name: "role", widget: "string" }
-      - { label: "Photo", name: "photo", widget: "image" }
-      - { label: "Bio", name: "bio", widget: "text" }
-      - { label: "Email", name: "email", widget: "string", required: false }
+      - label: "Name"
+        name: "name"
+        widget: "string"
+      - label: "Role"
+        name: "role"
+        widget: "string"
+      - label: "Photo"
+        name: "photo"
+        widget: "image"
+      - label: "Bio"
+        name: "bio"
+        widget: "text"
+      - label: "Email"
+        name: "email"
+        widget: "string"
+        required: false
 
-  # ----------------- RESOURCES -----------------
   - name: "resources"
     label: "Resources"
     folder: "content/resources"
     create: true
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Category", name: "category", widget: "select", options: ["Tutorial", "Notes", "Cheat Sheet", "Tool"] }
-      - { label: "File or Link", name: "file", widget: "file" }
-      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - "Tutorial"
+          - "Notes"
+          - "Cheat Sheet"
+          - "Tool"
+      - label: "File or Link"
+        name: "file"
+        widget: "file"
+      - label: "Excerpt"
+        name: "excerpt"
+        widget: "text"
