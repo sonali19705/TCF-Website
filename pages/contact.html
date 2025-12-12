@@ -1,0 +1,93 @@
+<!-- pages/contact.html -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact — TCF</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="antialiased text-gray-800">
+    <!-- navbar -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <header class="mb-6">
+            <h1 class="text-3xl font-bold">Contact</h1>
+            <p class="text-gray-600">Get in touch with the TCF team</p>
+        </header>
+
+
+        <section class="grid md:grid-cols-2 gap-6">
+            <form class="border rounded p-4">
+                <label class="block text-sm font-medium">Name</label>
+                <input class="w-full border rounded p-2 mt-1" />
+                <label class="block text-sm font-medium mt-3">Email</label>
+                <input class="w-full border rounded p-2 mt-1" />
+                <label class="block text-sm font-medium mt-3">Message</label>
+                <textarea class="w-full border rounded p-2 mt-1" rows="5"></textarea>
+                <button class="mt-3 px-4 py-2 bg-blue-600 text-white rounded">Send</button>
+            </form>
+
+
+            <div>
+                <h3 class="font-semibold">Faculty Advisor</h3>
+                <p class="text-sm text-gray-600">Name, Email, Phone</p>
+                <div class="mt-4">
+                    <h4 class="font-semibold">Location</h4>
+                    <p class="text-sm text-gray-600">(Optional map embed)</p>
+                </div>
+            </div>
+        </section>
+    </main><!-- FOOTER -->
+    <footer class="bg-gray-50 border-t mt-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="/" class="flex items-center space-x-3">
+                        <img src="/assets/images/logo.png" alt="TCF Logo" class="h-10 w-10 object-cover rounded" />
+                        <div>
+                            <div class="text-lg font-semibold">TCF — The Cyber Force</div>
+                            <div class="text-sm text-gray-500">LD College of Engineering</div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="flex space-x-6 mb-4 md:mb-0">
+                    <a href="/pages/about.html" class="text-sm hover:text-blue-600">About</a>
+                    <a href="/pages/events.html" class="text-sm hover:text-blue-600">Events</a>
+                    <a href="/pages/blog.html" class="text-sm hover:text-blue-600">Blog</a>
+                    <a href="/pages/contact.html" class="text-sm hover:text-blue-600">Contact</a>
+                </div>
+
+
+                <div class="text-sm text-gray-500">
+                    © <span id="year"></span> TCF — LDCE. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Mobile nav toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconOpen = document.getElementById('icon-open');
+        const iconClose = document.getElementById('icon-close');
+
+
+        navToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            iconOpen.classList.toggle('hidden');
+            iconClose.classList.toggle('hidden');
+        });
+
+
+        // Footer year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
