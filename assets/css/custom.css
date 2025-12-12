@@ -1,0 +1,25 @@
+/* custom.css — small visual polish for Tailwind template */
+:root{
+  --primary: #0b61ff;
+  --accent: #0f766e;
+  --muted: #6b7280;
+}
+
+/* small utility if you want a subtle card hover */
+.card-hover:hover{ transform: translateY(-6px); transition: transform .22s ease; }
+
+/* consistent image ratio for cards */
+.card-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* hero gradient overlay */
+.hero-overlay { background: linear-gradient(90deg, rgba(11,97,255,0.06), rgba(15,118,110,0.04)); }
+
+/* small readable max-width for long content */
+.readable { max-width: 70ch; }
+
+/* focus outline friendly */
+:focus { outline: 2px solid rgba(11,97,255,0.18); outline-offset: 2px; }

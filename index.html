@@ -1,91 +1,249 @@
-<!-- index.html -->
-<a href="/pages/events.html" class="text-blue-600 text-sm mt-2 inline-block">View</a>
-</div>
-</div>
-<!-- /event card -->
-</div>
-</section>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TCF — The Cyber Force | LDCE</title>
 
+  <!-- Tailwind (CDN for quick dev) -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- ABOUT SNAPSHOT -->
-<section class="mt-8">
-<h2 class="text-2xl font-semibold mb-4">About TCF</h2>
-<p class="text-gray-700">TCF (The Cyber Force) is a student-run cybersecurity club at LDCE focused on practical learning, events, and competitions. <a href="/pages/about.html" class="text-blue-600">Learn more</a></p>
-</section>
+  <!-- Custom CSS (create /assets/css/custom.css) -->
+  <link rel="stylesheet" href="/assets/css/custom.css" />
 
+  <meta name="description" content="TCF — The Cyber Force, LD College of Engineering. Events, resources, and club news." />
+</head>
+<body class="antialiased text-gray-800 bg-white">
 
-<!-- QUICK LINKS -->
-<section class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-<a href="/pages/events.html" class="p-4 border rounded text-center">Events</a>
-<a href="/pages/resources.html" class="p-4 border rounded text-center">Resources</a>
-<a href="/pages/blog.html" class="p-4 border rounded text-center">Blog</a>
-<a href="/pages/gallery.html" class="p-4 border rounded text-center">Gallery</a>
-</section>
+  <!-- NAVBAR -->
+  <header class="bg-white shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between py-4">
+        <a href="/" class="flex items-center gap-3">
+          <img src="/assets/images/logo.png" alt="TCF Logo" class="h-10 w-10 rounded object-cover" />
+          <div>
+            <div class="text-xl font-semibold">TCF — The Cyber Force</div>
+            <div class="text-xs text-gray-500">LD College of Engineering</div>
+          </div>
+        </a>
 
+        <!-- desktop nav -->
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="/" class="text-gray-700 hover:text-blue-600">Home</a>
+          <a href="/pages/about.html" class="text-gray-700 hover:text-blue-600">About</a>
+          <a href="/pages/events.html" class="text-gray-700 hover:text-blue-600">Events</a>
+          <a href="/pages/resources.html" class="text-gray-700 hover:text-blue-600">Resources</a>
+          <a href="/pages/blog.html" class="text-gray-700 hover:text-blue-600">Blog</a>
+          <a href="/pages/gallery.html" class="text-gray-700 hover:text-blue-600">Gallery</a>
+          <a href="/pages/contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+          <a href="/admin" class="ml-2 px-3 py-1 rounded-md text-sm bg-blue-600 text-white">Admin</a>
+        </nav>
 
-</main>
+        <!-- mobile menu button -->
+        <div class="md:hidden">
+          <button id="nav-toggle" aria-label="Toggle menu" class="p-2 rounded-md hover:bg-gray-100">
+            <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round"
+                 stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round"
+                 stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
 
+    <!-- mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden border-t">
+      <div class="px-4 pt-4 pb-6 space-y-2">
+        <a href="/" class="block py-2">Home</a>
+        <a href="/pages/about.html" class="block py-2">About</a>
+        <a href="/pages/events.html" class="block py-2">Events</a>
+        <a href="/pages/resources.html" class="block py-2">Resources</a>
+        <a href="/pages/blog.html" class="block py-2">Blog</a>
+        <a href="/pages/gallery.html" class="block py-2">Gallery</a>
+        <a href="/pages/contact.html" class="block py-2">Contact</a>
+        <a href="/admin" class="block py-2 font-medium text-blue-600">Admin</a>
+      </div>
+    </div>
+  </header>
 
-<!-- FOOTER -->
-<footer class="bg-gray-50 border-t mt-12">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-<div class="flex flex-col md:flex-row md:justify-between md:items-center">
-<div class="mb-4 md:mb-0">
-<a href="/" class="flex items-center space-x-3">
-<img src="/assets/images/logo.png" alt="TCF Logo" class="h-10 w-10 object-cover rounded" />
-<div>
-<div class="text-lg font-semibold">TCF — The Cyber Force</div>
-<div class="text-sm text-gray-500">LD College of Engineering</div>
-</div>
-</a>
-</div>
+  <!-- MAIN -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
 
+    <!-- HERO -->
+    <section class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">TCF — The Cyber Force</h1>
+        <p class="mt-4 text-gray-700 max-w-2xl">LDCE's cybersecurity club — practical learning, hands-on workshops, CTFs, and community projects. Join us to learn, build, and compete.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="/pages/events.html" class="px-5 py-2 bg-blue-600 text-white rounded-md shadow">View Events</a>
+          <a href="/pages/about.html" class="px-5 py-2 border rounded-md text-gray-700">About TCF</a>
+        </div>
+        <div class="mt-6 text-sm text-gray-500">Next meetup: <strong class="text-gray-800">12 Dec 2025 — Intro to Web Security</strong></div>
+      </div>
 
-<div class="flex space-x-6 mb-4 md:mb-0">
-<a href="/pages/about.html" class="text-sm hover:text-blue-600">About</a>
-<a href="/pages/events.html" class="text-sm hover:text-blue-600">Events</a>
-<a href="/pages/blog.html" class="text-sm hover:text-blue-600">Blog</a>
-<a href="/pages/contact.html" class="text-sm hover:text-blue-600">Contact</a>
-</div>
+      <div class="relative">
+        <div class="hero-overlay rounded-lg overflow-hidden">
+          <img src="/assets/images/hero-placeholder.jpg" alt="TCF hero" class="w-full h-80 object-cover">
+        </div>
+      </div>
+    </section>
 
+    <!-- LATEST ANNOUNCEMENT -->
+    <section class="mt-12 grid md:grid-cols-3 gap-6">
+      <div class="md:col-span-2">
+        <h2 class="text-2xl font-semibold mb-4">Latest Announcement</h2>
+        <div class="border rounded-lg p-5 shadow-sm">
+          <div class="flex items-start gap-4">
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <h3 class="font-semibold">Website Launch — TCF is live!</h3>
+                <p class="text-sm text-gray-500">12 Dec 2025</p>
+              </div>
+              <p class="mt-2 text-gray-700">We’ve deployed the new club website with event management, blog, and magazine support. Team members can now add content via the /admin panel.</p>
+              <a href="/pages/blog.html" class="inline-block mt-3 text-blue-600">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<div class="text-sm text-gray-500">
-© <span id="year"></span> TCF — LDCE. All rights reserved.
-</div>
-</div>
-</div>
-</footer>
+      <!-- UPCOMING EVENTS (side) -->
+      <aside>
+        <h3 class="text-lg font-semibold mb-3">Upcoming Events</h3>
 
+        <div class="space-y-3">
+          <!-- small event card -->
+          <article class="border rounded p-3 flex gap-3 items-start">
+            <img src="/assets/images/event1.jpg" alt="E1" class="h-16 w-24 object-cover rounded">
+            <div>
+              <p class="text-sm text-gray-500">12 Dec 2025</p>
+              <h4 class="font-medium">Intro to Web Security</h4>
+            </div>
+          </article>
 
-<script>
-// Mobile nav toggle
-const navToggle = document.getElementById('nav-toggle');
-const mobileMenu = document.getElementById('mobile-menu');
-const iconOpen = document.getElementById('icon-open');
-const iconClose = document.getElementById('icon-close');
+          <article class="border rounded p-3 flex gap-3 items-start">
+            <img src="/assets/images/event2.jpg" alt="E2" class="h-16 w-24 object-cover rounded">
+            <div>
+              <p class="text-sm text-gray-500">20 Dec 2025</p>
+              <h4 class="font-medium">CTF Practice Session</h4>
+            </div>
+          </article>
 
+          <a href="/pages/events.html" class="block mt-2 text-sm text-blue-600">View all events</a>
+        </div>
+      </aside>
+    </section>
 
-navToggle.addEventListener('click', () => {
-mobileMenu.classList.toggle('hidden');
-iconOpen.classList.toggle('hidden');
-iconClose.classList.toggle('hidden');
-});
+    <!-- ABOUT SNAPSHOT -->
+    <section class="mt-10">
+      <h2 class="text-2xl font-semibold mb-4">About TCF</h2>
+      <p class="text-gray-700 readable">TCF (The Cyber Force) is a student-run cybersecurity club at LDCE focused on practical learning, workshops, and competitions. We host regular events, CTFs, and hands-on sessions to build skills and community. <a href="/pages/about.html" class="text-blue-600">Learn more</a></p>
+    </section>
 
+    <!-- QUICK LINKS -->
+    <section class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+      <a href="/pages/events.html" class="p-4 border rounded text-center hover:shadow-sm">Events</a>
+      <a href="/pages/resources.html" class="p-4 border rounded text-center hover:shadow-sm">Resources</a>
+      <a href="/pages/blog.html" class="p-4 border rounded text-center hover:shadow-sm">Blog</a>
+      <a href="/pages/gallery.html" class="p-4 border rounded text-center hover:shadow-sm">Gallery</a>
+    </section>
 
-// Footer year
-document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
+    <!-- LATEST BLOG / MAGAZINES -->
+    <section class="mt-10">
+      <h2 class="text-2xl font-semibold mb-4">Latest from Blog & Magazines</h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="border rounded-lg overflow-hidden card-hover">
+          <img class="card-image" src="/assets/images/mag-cover.jpg" alt="mag">
+          <div class="p-4">
+            <h3 class="font-semibold">Magazine — Winter 2025</h3>
+            <p class="text-sm text-gray-500">2025</p>
+            <a href="/pages/blog.html" class="inline-block mt-2 text-blue-600">Download</a>
+          </div>
+        </article>
+
+        <article class="border rounded-lg overflow-hidden card-hover">
+          <img class="card-image" src="/assets/images/blog1.jpg" alt="post">
+          <div class="p-4">
+            <h3 class="font-semibold">Event Recap: Web Security Intro</h3>
+            <p class="text-sm text-gray-500">12 Dec 2025</p>
+            <a href="/pages/blog.html" class="inline-block mt-2 text-blue-600">Read</a>
+          </div>
+        </article>
+
+        <article class="border rounded-lg overflow-hidden card-hover">
+          <img class="card-image" src="/assets/images/blog2.jpg" alt="post">
+          <div class="p-4">
+            <h3 class="font-semibold">How to prepare for CTFs</h3>
+            <p class="text-sm text-gray-500">10 Dec 2025</p>
+            <a href="/pages/blog.html" class="inline-block mt-2 text-blue-600">Read</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-50 border-t mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+        <div class="flex items-center gap-3">
+          <img src="/assets/images/logo.png" alt="TCF Logo" class="h-10 w-10 object-cover rounded" />
+          <div>
+            <div class="text-lg font-semibold">TCF — The Cyber Force</div>
+            <div class="text-sm text-gray-500">LD College of Engineering</div>
+          </div>
+        </div>
+
+        <div class="flex gap-6 text-sm">
+          <a href="/pages/about.html" class="hover:text-blue-600">About</a>
+          <a href="/pages/events.html" class="hover:text-blue-600">Events</a>
+          <a href="/pages/blog.html" class="hover:text-blue-600">Blog</a>
+          <a href="/pages/contact.html" class="hover:text-blue-600">Contact</a>
+        </div>
+
+        <div class="text-sm text-gray-500">
+          © <span id="year"></span> TCF — LDCE. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+
+    navToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
     });
-  }
-</script>
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Netlify Identity widget (root page must include this to accept invite links) -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+
+  <!-- Custom JS -->
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
