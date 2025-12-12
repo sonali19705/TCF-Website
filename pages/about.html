@@ -11,8 +11,59 @@
 </head>
 
 <body class="antialiased text-gray-800">
-    <!-- include navbar here (copy from index) -->
-    <!-- Page content -->
+    <!-- NAVBAR -->
+  <header class="bg-white shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between py-4">
+        <a href="/" class="flex items-center gap-3">
+          <img src="/assets/images/logo.png" alt="TCF Logo" class="h-10 w-10 rounded object-cover" />
+          <div>
+            <div class="text-xl font-semibold">TCF — The Cyber Force</div>
+            <div class="text-xs text-gray-500">LD College of Engineering</div>
+          </div>
+        </a>
+
+        <!-- desktop nav -->
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="/" class="text-gray-700 hover:text-blue-600">Home</a>
+          <a href="/pages/about.html" class="text-gray-700 hover:text-blue-600">About</a>
+          <a href="/pages/events.html" class="text-gray-700 hover:text-blue-600">Events</a>
+          <a href="/pages/resources.html" class="text-gray-700 hover:text-blue-600">Resources</a>
+          <a href="/pages/blog.html" class="text-gray-700 hover:text-blue-600">Blog</a>
+          <a href="/pages/gallery.html" class="text-gray-700 hover:text-blue-600">Gallery</a>
+          <a href="/pages/contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+          <a href="/admin" class="ml-2 px-3 py-1 rounded-md text-sm bg-blue-600 text-white">Admin</a>
+        </nav>
+
+        <!-- mobile menu button -->
+        <div class="md:hidden">
+          <button id="nav-toggle" aria-label="Toggle menu" class="p-2 rounded-md hover:bg-gray-100">
+            <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round"
+                 stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round"
+                 stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden border-t">
+      <div class="px-4 pt-4 pb-6 space-y-2">
+        <a href="/" class="block py-2">Home</a>
+        <a href="/pages/about.html" class="block py-2">About</a>
+        <a href="/pages/events.html" class="block py-2">Events</a>
+        <a href="/pages/resources.html" class="block py-2">Resources</a>
+        <a href="/pages/blog.html" class="block py-2">Blog</a>
+        <a href="/pages/gallery.html" class="block py-2">Gallery</a>
+        <a href="/pages/contact.html" class="block py-2">Contact</a>
+        <a href="/admin" class="block py-2 font-medium text-blue-600">Admin</a>
+      </div>
+    </div>
+  </header>
+
     <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <header class="mb-8">
             <h1 class="text-3xl font-bold">About TCF</h1>
