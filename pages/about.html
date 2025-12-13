@@ -1,162 +1,208 @@
-<!-- pages/about.html -->
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>About — TCF</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — TCF</title>
 
-    <link rel="stylesheet" href="/assets/css/custom.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <meta name="description" content="About TCF — The Cyber Force, LDCE. Mission, team and club history.">
 </head>
 
-<body class="antialiased text-gray-800">
-    <!-- NAVBAR -->
-  <header class="bg-white shadow-sm">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between py-4">
-        <a href="/" class="flex items-center gap-3">
-          <img src="/assets/images/logo.png" alt="TCF Logo" class="h-10 w-10 rounded object-cover" />
-          <div>
-            <div class="text-xl font-semibold">TCF — The Cyber Force</div>
-            <div class="text-xs text-gray-500">LD College of Engineering</div>
-          </div>
-        </a>
+<body class="site-body">
 
-        <!-- desktop nav -->
-        <nav class="hidden md:flex items-center gap-6 text-sm">
-          <a href="/" class="text-gray-700 hover:text-blue-600">Home</a>
-          <a href="/pages/about.html" class="text-gray-700 hover:text-blue-600">About</a>
-          <a href="/pages/events.html" class="text-gray-700 hover:text-blue-600">Events</a>
-          <a href="/pages/resources.html" class="text-gray-700 hover:text-blue-600">Resources</a>
-          <a href="/pages/blog.html" class="text-gray-700 hover:text-blue-600">Blog</a>
-          <a href="/pages/gallery.html" class="text-gray-700 hover:text-blue-600">Gallery</a>
-          <a href="/pages/contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
-          <a href="/admin" class="ml-2 px-3 py-1 rounded-md text-sm bg-blue-600 text-white">Admin</a>
-        </nav>
-
-        <!-- mobile menu button -->
-        <div class="md:hidden">
-          <button id="nav-toggle" aria-label="Toggle menu" class="p-2 rounded-md hover:bg-gray-100">
-            <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round"
-                 stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round"
-                 stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-          </button>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand">
+        <img src="/assets/images/logo.png" class="brand-logo" alt="TCF Logo">
+        <div>
+          <div class="brand-title">TCF — The Cyber Force</div>
+          <div class="brand-sub">LD College of Engineering</div>
         </div>
-      </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/pages/about.html" class="nav-link" aria-current="page">About</a>
+        <a href="/pages/events.html" class="nav-link">Events</a>
+        <a href="/pages/resources.html" class="nav-link">Resources</a>
+        <a href="/pages/blog.html" class="nav-link">Blog</a>
+        <a href="/pages/gallery.html" class="nav-link">Gallery</a>
+        <a href="/pages/contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <button id="nav-toggle" class="mobile-toggle" aria-label="Toggle menu">
+        <svg id="icon-open" class="icon" viewBox="0 0 24 24">
+          <path stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="icon-close" class="icon hidden" viewBox="0 0 24 24">
+          <path stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
     </div>
 
-    <!-- mobile menu -->
-    <div id="mobile-menu" class="md:hidden hidden border-t">
-      <div class="px-4 pt-4 pb-6 space-y-2">
-        <a href="/" class="block py-2">Home</a>
-        <a href="/pages/about.html" class="block py-2">About</a>
-        <a href="/pages/events.html" class="block py-2">Events</a>
-        <a href="/pages/resources.html" class="block py-2">Resources</a>
-        <a href="/pages/blog.html" class="block py-2">Blog</a>
-        <a href="/pages/gallery.html" class="block py-2">Gallery</a>
-        <a href="/pages/contact.html" class="block py-2">Contact</a>
-        <!-- <a href="/admin" class="block py-2 font-medium text-blue-600">Admin</a> -->
-      </div>
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="mobile-menu hidden">
+      <a href="/" class="mobile-link">Home</a>
+      <a href="/pages/about.html" class="mobile-link">About</a>
+      <a href="/pages/events.html" class="mobile-link">Events</a>
+      <a href="/pages/resources.html" class="mobile-link">Resources</a>
+      <a href="/pages/blog.html" class="mobile-link">Blog</a>
+      <a href="/pages/gallery.html" class="mobile-link">Gallery</a>
+      <a href="/pages/contact.html" class="mobile-link">Contact</a>
     </div>
   </header>
 
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <header class="mb-8">
-            <h1 class="text-3xl font-bold">About TCF</h1>
-            <p class="text-gray-600">Who we are and what we do.</p>
-        </header>
+  <!-- MAIN -->
+  <main class="container main">
 
+    <!-- INTRO -->
+    <section class="section">
+      <div class="section-header">
+        <h1 class="hero-title">About TCF</h1>
+        <p class="hero-sub">Who we are and what we do.</p>
+      </div>
+    </section>
 
-        <section class="grid md:grid-cols-2 gap-6">
-            <div>
-                <h2 class="text-xl font-semibold mb-2">Mission</h2>
-                <p class="text-gray-700">Short mission statement goes here.</p>
-            </div>
-            <div>
-                <h2 class="text-xl font-semibold mb-2">Vision</h2>
-                <p class="text-gray-700">Short vision statement goes here.</p>
-            </div>
-        </section>
-
-
-        <section class="mt-8">
-            <h2 class="text-xl font-semibold mb-4">Team</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- team card -->
-                <div class="border rounded p-4 text-center">
-                    <img src="/assets/images/team-placeholder.jpg" alt="member"
-                        class="h-24 w-24 mx-auto rounded-full object-cover" />
-                    <h3 class="mt-3 font-semibold">Member Name</h3>
-                    <p class="text-sm text-gray-500">Role</p>
-                </div>
-            </div>
-        </section>
-
-
-        <section class="mt-8">
-            <h2 class="text-xl font-semibold mb-4">Timeline</h2>
-            <p class="text-gray-700">Short timeline or history of the club.</p>
-        </section>
-
-
-    </main>
-
-
-    <!-- FOOTER -->
-    <footer class="bg-gray-50 border-t mt-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div class="flex flex-col md:flex-row md:justify-between md:items-center">
-                <div class="mb-4 md:mb-0">
-                    <a href="/" class="flex items-center space-x-3">
-                        <img src="/assets/images/logo.png" alt="TCF Logo" class="h-10 w-10 object-cover rounded" />
-                        <div>
-                            <div class="text-lg font-semibold">TCF — The Cyber Force</div>
-                            <div class="text-sm text-gray-500">LD College of Engineering</div>
-                        </div>
-                    </a>
-                </div>
-
-
-                <div class="flex space-x-6 mb-4 md:mb-0">
-                    <a href="/pages/about.html" class="text-sm hover:text-blue-600">About</a>
-                    <a href="/pages/events.html" class="text-sm hover:text-blue-600">Events</a>
-                    <a href="/pages/blog.html" class="text-sm hover:text-blue-600">Blog</a>
-                    <a href="/pages/contact.html" class="text-sm hover:text-blue-600">Contact</a>
-                </div>
-
-
-                <div class="text-sm text-gray-500">
-                    © <span id="year"></span> TCF — LDCE. All rights reserved.
-                </div>
-            </div>
+    <!-- MISSION & VISION -->
+    <section class="section">
+      <div class="mission-vision">
+        <div>
+          <h3 class="mv-title">Mission</h3>
+          <p class="mv-text">
+            Our mission is to build practical cybersecurity skills among students
+            through hands-on workshops, capture-the-flag competitions, mentoring,
+            and open knowledge sharing.
+          </p>
         </div>
-    </footer>
+
+        <div>
+          <h3 class="mv-title">Vision</h3>
+          <p class="mv-text">
+            To create a campus-wide community that empowers students to explore
+            cybersecurity, pursue ethical hacking, and contribute to secure
+            digital systems.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Team</h2>
+      </div>
+
+      <div class="team-grid">
+        <div class="card team-card">
+          <img src="/assets/images/team_placeholder.jpg" alt="Member Name" class="team-avatar">
+          <h3 class="section-title">Member Name</h3>
+          <p class="section-desc">Role</p>
+        </div>
+
+        <div class="card team-card">
+          <img src="/assets/images/team_placeholder.jpg" alt="Member Name" class="team-avatar">
+          <h3 class="section-title">Member Name</h3>
+          <p class="section-desc">Role</p>
+        </div>
+
+        <div class="card team-card">
+          <img src="/assets/images/team_placeholder.jpg" alt="Member Name" class="team-avatar">
+          <h3 class="section-title">Member Name</h3>
+          <p class="section-desc">Role</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Timeline</h2>
+      </div>
+
+      <p class="section-desc">
+        Founded in 2024, TCF has organized workshops on web security,
+        reverse engineering, and hosted multiple CTF events.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <!-- ROW 1 -->
+      <div class="footer-row footer-top">
+        <div class="brand-small">
+          <img src="/assets/images/logo.png" alt="TCF Logo" class="brand-small-logo" />
+          <div>
+            <div class="brand-small-title">TCF — The Cyber Force</div>
+            <div class="brand-sub">LD College of Engineering</div>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <a href="/pages/about.html" class="footer-link">About</a>
+          <a href="/pages/events.html" class="footer-link">Events</a>
+          <a href="/pages/blog.html" class="footer-link">Blog</a>
+          <a href="/pages/contact.html" class="footer-link">Contact</a>
+        </div>
+      </div>
+
+      <!-- ROW 2 -->
+      <div class="footer-row footer-bottom footer-mobile-center">
+
+        <span class="footer-social-label"></span>
+
+        <!-- ICON ROW -->
+        <div class="footer-social footer-social-center">
+          <a href="https://www.instagram.com/tcf_ldce?igsh=MTd0dTFwY3d0aXgwYw==" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="18" cy="6" r="1" />
+            </svg>
+          </a>
+        </div>
 
 
-    <script>
-        // Mobile nav toggle
-        const navToggle = document.getElementById('nav-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const iconOpen = document.getElementById('icon-open');
-        const iconClose = document.getElementById('icon-close');
+        <!--<a href="#" aria-label="LinkedIn">
+          LinkedIn SVG 
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <rect x="2" y="2" width="20" height="20" rx="2"/>
+            <line x1="7" y1="9" x2="7" y2="17"/>
+            <line x1="7" y1="7" x2="7" y2="7"/>
+            <path d="M11 17v-4a2 2 0 1 1 4 0v4"/>
+          </svg>
+        </a>
+      </div>-->
 
+        <div class="footer-copy footer-copy-center">
+          © <span id="year"></span> TCF — LDCE. All rights reserved.
+        </div>
+      </div>
 
-        navToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            iconOpen.classList.toggle('hidden');
-            iconClose.classList.toggle('hidden');
-        });
+    </div>
+  </footer>
 
+  <!-- JS -->
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
 
-        // Footer year
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script src="/assets/js/main.js" defer></script>
+    navToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 
 </body>
 

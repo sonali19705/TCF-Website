@@ -1,0 +1,510 @@
+/* =========================================
+   Calm Minimal Cyber-Tech Theme (TCF)
+   DESIGN LOCKED — DO NOT MODIFY WITHOUT REASON
+   ========================================= */
+
+/* ---------- Theme Variables ---------- */
+:root {
+  --primary: #5cc6c8;
+  --accent: #8b7ed6;
+  --muted: #e5e7eb;
+  --muted-2: #b6bcc4;
+  --bg: #0b1116;
+  --card-bg: #0f1720;
+  --border: rgba(255, 255, 255, 0.04);
+  --max-width: 1100px;
+  --pad: 20px;
+  --radius: 12px;
+}
+
+/* ---------- Global ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--muted);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  margin: 0;
+  color: var(--muted-2);
+  line-height: 1.65;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ---------- Section System ---------- */
+.section {
+  margin-top: 56px;
+}
+
+.section:first-child {
+  margin-top: 0;
+}
+
+.section-header {
+  margin-bottom: 24px;
+}
+
+.section-title {
+  color: var(--primary);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.section-desc {
+  max-width: 720px;
+  color: var(--muted-2);
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  background: rgba(11, 17, 22, 0.75);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+  position: relative;
+  z-index: 20;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+}
+
+.brand-title {
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.brand-sub {
+  font-size: 0.78rem;
+  color: var(--muted-2);
+}
+
+/* nav */
+.nav-links {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-link {
+  color: var(--muted-2);
+  font-size: 0.95rem;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+}
+
+/* mobile */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  stroke: var(--primary);
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(11, 17, 22, 0.96);
+  border-top: 1px solid var(--border);
+  padding: 16px;
+}
+
+.mobile-link {
+  display: block;
+  padding: 10px 6px;
+  color: var(--muted-2);
+  border-radius: 6px;
+}
+
+.mobile-link:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: #fff;
+}
+
+@media (min-width:901px) {
+  .mobile-menu {
+    display: none !important;
+  }
+}
+
+/* ---------- Main ---------- */
+.main {
+  padding: 56px 0 72px;
+}
+
+/* ---------- Hero ---------- */
+.hero-title {
+  font-size: 1.9rem;
+  margin-bottom: 12px;
+}
+
+.hero-sub {
+  max-width: 720px;
+}
+
+/* ---------- Cards ---------- */
+.card,
+.announcement-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  padding: 18px;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Prevent full-width buttons inside cards */
+.announcement-card a {
+  align-self: flex-start;
+}
+
+/* ---------- Team Member (LOCKED) ---------- */
+.team-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.btn-primary {
+  border: 1px solid rgba(92, 198, 200, 0.25);
+  color: var(--primary);
+}
+
+.btn-primary:hover {
+  background: rgba(92, 198, 200, 0.08);
+}
+
+.btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--muted-2);
+}
+
+/* ---------- Grids ---------- */
+.events-grid,
+.resources-grid,
+.blog-grid,
+.gallery-grid,
+.team-grid,
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* ---------- Mission & Vision (LOCKED) ---------- */
+.mission-vision {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.mv-title {
+  color: var(--primary);
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.mv-text {
+  max-width: 520px;
+  color: var(--muted-2);
+}
+
+/* ---------- Footer ---------- */
+/* ---------- Footer (LOCKED) ---------- */
+.site-footer {
+  margin-top: 72px;
+  padding: 32px 0;
+  background: rgba(11, 17, 22, 0.55);
+  border-top: 1px solid var(--border);
+}
+
+/* footer wrapper */
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  /* 🔑 two rows */
+  gap: 24px;
+  /* vertical space between rows */
+}
+
+/* each row */
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+/* brand */
+.brand-small {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-small-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+}
+
+/* links */
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-link {
+  color: var(--muted-2);
+  font-size: 0.95rem;
+}
+
+.footer-link:hover {
+  color: #fff;
+}
+
+/* ---------- Social icons ---------- */
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-social-label {
+  font-size: 0.85rem;
+  color: var(--muted-2);
+  margin-right: 6px;
+}
+
+.footer-social a {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-social svg {
+  width: 14px;
+  /* 🔑 smaller icons */
+  height: 14px;
+  stroke: var(--muted);
+}
+
+.footer-social a:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.footer-social a:hover svg {
+  stroke: var(--primary);
+}
+
+/* Explicit column roles */
+.footer-left {
+  flex: 1;
+}
+
+/* copyright */
+.footer-copy {
+  flex: 1;
+  text-align: right;
+  font-size: 0.85rem;
+  color: var(--muted-2);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:900px) {
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .events-grid,
+  .resources-grid,
+  .blog-grid,
+  .gallery-grid,
+  .team-grid,
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mission-vision {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .site-footer {
+    padding: 40px 0;
+  }
+
+  .footer-inner {
+    gap: 28px;
+  }
+
+  .footer-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+  }
+
+  /* Brand block */
+  .brand-small {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .brand-small-logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .brand-small-title {
+    font-size: 1rem;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+
+  .brand-sub {
+    font-size: 0.85rem;
+  }
+
+  /* Footer links */
+  .footer-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .footer-link {
+    font-size: 0.95rem;
+  }
+
+  /* Social */
+  /* 🔑 ICON ON ITS OWN LINE */
+  .footer-social {
+    margin-top: 6px;
+  }
+
+  .footer-social-label {
+    display: none;
+    /* cleaner on mobile */
+  }
+
+  .footer-social a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+  }
+
+  .footer-social svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Footer mobile centering */
+  .footer-mobile-center {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  /* Center icon */
+  .footer-social-center {
+    justify-content: center;
+  }
+
+  /* Copyright centered */
+  .footer-copy-center {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted-2);
+  }
+
+  /* 🔑 COPYRIGHT BELOW ICON */
+  .footer-copy {
+    margin-top: 4px;
+    text-align: center;
+    max-width: 280px;
+    line-height: 1.4;
+  }
+}
