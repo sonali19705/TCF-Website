@@ -50,3 +50,79 @@ document.addEventListener('submit', function(e){
   alert('Thanks! Message sent (demo).');
   form.reset();
 });
+
+//canvas
+document.addEventListener("DOMContentLoaded", () => {
+  const canvas = document.getElementById("particles-canvas");
+  if (!canvas) return;
+
+  const ctx = canvas.getContext("2d");
+  let particles = [];
+  let scrollOffset = 0;
+
+  const particleCount = window.innerWidth < 768 ? 40 : 80;
+
+  function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+  window.addEventListener("resize", resizeCanvas);
+  window.addEventListener("scroll", () => {
+    scrollOffset = window.scrollY * 0.15;
+  });
+
+  resizeCanvas();
+
+  function createParticles() {
+    particles = [];
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        radius: Math.random() * 2.5 + 1.5
+      });
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach((p, i) => {
+      const y = p.y + scrollOffset * 0.05;
+
+      ctx.beginPath();
+      ctx.arc(p.x, y, p.radius, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(92, 198, 200, 0.9)";
+      ctx.fill();
+
+      for (let j = i + 1; j < particles.length; j++) {
+        const p2 = particles[j];
+        const y2 = p2.y + scrollOffset * 0.05;
+        const dist = Math.hypot(p.x - p2.x, y - y2);
+
+        if (dist < 150) {
+          ctx.strokeStyle = "rgba(92, 198, 200, 0.22)";
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(p.x, y);
+          ctx.lineTo(p2.x, y2);
+          ctx.stroke();
+        }
+      }
+
+      p.x += p.vx;
+      p.y += p.vy;
+
+      if (p.x <= 0 || p.x >= canvas.width) p.vx *= -1;
+      if (p.y <= 0 || p.y >= canvas.height) p.vy *= -1;
+    });
+
+    requestAnimationFrame(animate);
+  }
+
+  createParticles();
+  animate();
+});

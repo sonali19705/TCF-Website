@@ -75,11 +75,23 @@ collections:
     folder: "content/team"
     create: true
     fields:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Role", name: "role", widget: "string" }
-      - { label: "Photo", name: "photo", widget: "image" }
-      - { label: "Bio", name: "bio", widget: "text" }
-      - { label: "Email", name: "email", widget: "string", required: false }
+    - { label: "Name", name: "name", widget: "string" }
+
+    - { label: "Role", name: "role", widget: "string" }
+
+    - { label: "Image", name: "image", widget: "image" }
+
+    - label: "Instagram"
+      name: "instagram"
+      widget: "string"
+      required: false
+      hint: "Full Instagram profile URL"
+
+    - label: "LinkedIn"
+      name: "linkedin"
+      widget: "string"
+      required: false
+      hint: "Full LinkedIn profile URL"
 
   - name: "resources"
     label: "Resources"

@@ -1,15 +1,18 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — TCF</title>
-
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/style.css" />
   <meta name="description" content="Contact TCF — The Cyber Force, LDCE." />
 </head>
 
 <body class="site-body">
+  <canvas id="particles-canvas"></canvas>
 
   <!-- NAVBAR -->
   <header class="site-header">
@@ -17,8 +20,7 @@
       <a href="/" class="brand">
         <img src="/assets/images/logo.png" alt="TCF Logo" class="brand-logo" />
         <div>
-          <div class="brand-title">TCF — The Cyber Force</div>
-          <div class="brand-sub">LD College of Engineering</div>
+          <div class="brand-title">TCF</div>
         </div>
       </a>
 
@@ -34,10 +36,10 @@
 
       <button id="nav-toggle" class="mobile-toggle" aria-label="Toggle menu">
         <svg id="icon-open" class="icon" viewBox="0 0 24 24">
-          <path stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          <path stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
         <svg id="icon-close" class="icon hidden" viewBox="0 0 24 24">
-          <path stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          <path stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
     </div>
@@ -58,6 +60,8 @@
   <main class="container main">
 
     <section class="section">
+
+      <!-- HEADER -->
       <div class="section-header">
         <h1 class="section-title">Contact</h1>
         <p class="section-desc">
@@ -65,102 +69,127 @@
         </p>
       </div>
 
-      <div class="grid-3" style="grid-template-columns: 1fr 1fr; max-width:800px;">
+      <!-- CONTACT FORM (PRIMARY) -->
+      <div class="announcement-card contact-form-card">
+        <h3 class="section-title">Send a Message</h3>
 
-        <!-- CONTACT DETAILS -->
-        <div class="announcement-card">
-          <h3 class="section-title">Email</h3>
-          <p>
-            Official communication:<br><br>
-            <strong>
-              <a href="mailto:tcf.ldce@gmail.com">tcf.ldce@gmail.com</a>
-            </strong>
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+          action="/contact-success.html" style="margin-top:20px;">
+          <input type="hidden" name="form-name" value="contact" />
+
+          <!-- Honeypot -->
+          <p style="display:none;">
+            <label>Don’t fill this out: <input name="bot-field" /></label>
           </p>
-        </div>
 
-        <!-- SOCIAL -->
-        <div class="announcement-card">
-          <h3 class="section-title">Social Media</h3>
-          <p>Follow us for updates, events, and announcements.</p>
-
-          <div style="display:flex; gap:12px; margin-top:14px;">
-            <a href="https://www.instagram.com/tcf_ldce?igsh=MTd0dTFwY3d0aXgwYw==" class="btn btn-outline">
-              Instagram
-            </a>
-
-            <!-- LinkedIn intentionally commented -->
-            <!--
-            <a href="#" class="btn btn-outline">
-              LinkedIn
-            </a>
-            -->
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" required class="form-input" />
           </div>
-        </div>
 
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" required class="form-input" />
+          </div>
+
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" rows="5" required class="form-input"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="margin-top:12px;">
+            Send Message
+          </button>
+        </form>
       </div>
+
+      <!-- EMAIL + SOCIAL (SECONDARY) 
+    <div class="contact-info-grid">
+
+      <div class="announcement-card">
+        <h3 class="section-title">Email</h3>
+        <p>
+          Official communication:<br><br>
+          <strong>
+            <a href="mailto:tcf.ldce@gmail.com">tcf.ldce@gmail.com</a>
+          </strong>
+        </p>
+      </div>
+
+      <div class="announcement-card">
+        <h3 class="section-title">Social Media</h3>
+        <p>Follow us for updates, events, and announcements.</p>
+
+        <div style="display:flex; gap:12px; margin-top:14px;">
+          <a
+            href="https://www.instagram.com/tcf_ldce?igsh=MTd0dTFwY3d0aXgwYw=="
+            class="btn btn-outline"
+            target="_blank"
+          >
+            Instagram
+          </a>
+        </div>
+      </div>
+
+    </div>-->
+
     </section>
 
   </main>
 
-    <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container footer-inner">
+  <div class="container footer-inner">
 
-      <!-- ROW 1 -->
-      <div class="footer-row footer-top">
-        <div class="brand-small">
-          <img src="/assets/images/logo.png" alt="TCF Logo" class="brand-small-logo" />
-          <div>
-            <div class="brand-small-title">TCF — The Cyber Force</div>
-            <div class="brand-sub">LD College of Engineering</div>
-          </div>
-        </div>
+    <!-- MAIN FOOTER ROW -->
+    <div class="footer-main">
 
-        <div class="footer-links">
-          <a href="/pages/about.html" class="footer-link">About</a>
-          <a href="/pages/events.html" class="footer-link">Events</a>
-          <a href="/pages/blog.html" class="footer-link">Blog</a>
-          <a href="/pages/contact.html" class="footer-link">Contact</a>
+      <!-- LEFT: BRAND -->
+      <div class="footer-brand">
+       <!-- <img src="/assets/images/logo.png" alt="TCF Logo" class="footer-logo" />-->
+        <div class="footer-brand-text">
+          <div class="footer-brand-title">TCF</div>
+          <div class="footer-brand-sub">LD College of Engineering</div>
         </div>
       </div>
 
-      <!-- ROW 2 -->
-      <div class="footer-row footer-bottom footer-mobile-center">
+      <!-- RIGHT: CONTACT + SOCIAL -->
+      <div class="footer-right">
+        <a href="mailto:tcf.ldce@gmail.com" class="footer-email">
+          tcf.ldce@gmail.com
+        </a>
 
-        <span class="footer-social-label"></span>
-
-        <!-- ICON ROW -->
-        <div class="footer-social footer-social-center">
-          <a href="https://www.instagram.com/tcf_ldce?igsh=MTd0dTFwY3d0aXgwYw==" aria-label="Instagram">
+        <div class="footer-social">
+          <a href="https://www.instagram.com/tcf_ldce" aria-label="Instagram">
+            <!-- Instagram SVG -->
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <rect x="2" y="2" width="20" height="20" rx="5" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="18" cy="6" r="1" />
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="18" cy="6" r="1"/>
             </svg>
           </a>
-        </div>
 
-
-        <!--<a href="#" aria-label="LinkedIn">
-          LinkedIn SVG 
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <rect x="2" y="2" width="20" height="20" rx="5" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="18" cy="6" r="1" />
+          <!-- LinkedIn (add URL later) -->
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <rect x="2" y="2" width="20" height="20" rx="4"/>
+              <line x1="7" y1="10" x2="7" y2="17"/>
+              <line x1="7" y1="7" x2="7.01" y2="7"/>
+              <path d="M11 17v-4a2 2 0 0 1 4 0v4"/>
             </svg>
-        </a>
-      </div>-->
-
-        <div class="footer-copy footer-copy-center">
-          © <span id="year"></span> TCF — LDCE. All rights reserved.
+          </a>
         </div>
       </div>
 
     </div>
-  </footer>
 
+    <!-- COPYRIGHT -->
+    <div class="footer-copy">
+      © <span id="year"></span> TCF — LDCE. All rights reserved.
+    </div>
 
-  <!-- JS -->
+  </div>
+</footer>
+
   <script>
     const navToggle = document.getElementById('nav-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -176,5 +205,7 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
+  <script src="/assets/js/main.js" defer></script>
 </body>
+
 </html>
