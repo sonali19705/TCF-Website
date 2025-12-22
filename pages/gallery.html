@@ -69,8 +69,13 @@
       </div>
     </section>
 
-    <!-- EVENT 1 -->
+
     <section class="section">
+
+      <!-- CMS members will render here -->
+      <div class="gallery-grid" id="galleryEvents"></div>
+
+      <!-- Dummy (keep for now, will remove later) 
       <div class="gallery-grid">
 
         <article class="announcement-card gallery-event-card">
@@ -82,7 +87,6 @@
             <h3 class="section-title">Intro to Web Security Workshop</h3>
             <p class="section-desc">January 2026</p>
 
-            <!-- HOVER TEXT -->
             <span class="gallery-event-hover">
               Event Photos
             </span>
@@ -90,11 +94,22 @@
 
         </article>
 
+      </div>-->
+
+      <div class="gallery-grid">
+
+        <div class="announcement-card">
+          <p class="section-desc" style="text-align:center;">
+            Event photos and gallery highlights will be published here soon.
+          </p>
+
+          <span class="btn btn-outline" style="pointer-events:none; opacity:0.6;">
+            Coming Soon
+          </span>
+        </div>
+
       </div>
     </section>
-
-
-
 
 
   </main>
@@ -116,8 +131,8 @@
 
         <!-- RIGHT: CONTACT + SOCIAL -->
         <div class="footer-right">
-          <a href="mailto:tcf.ldce@gmail.com" class="footer-email">
-            tcf.ldce@gmail.com
+          <a href="mailto:thecyberforce.ldce@gmail.com" class="footer-email">
+            thecyberforce.ldce@gmail.com
           </a>
 
           <div class="footer-social">
@@ -169,6 +184,7 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
   <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/gallery.js" defer></script>
 </body>
 
 </html>

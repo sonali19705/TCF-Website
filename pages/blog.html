@@ -69,7 +69,7 @@
       </div>
     </section>
 
-    <!-- FEATURED POST -->
+    <!-- FEATURED POST 
     <section class="section">
       <div class="section-header">
         <h2 class="section-title">Featured Post</h2>
@@ -81,40 +81,56 @@
         <p class="section-desc">
           Short excerpt from the featured post will appear here.
         </p>
-        <!-- Read more intentionally disabled -->
-        <!-- <a href="#" class="btn btn-outline">Read more</a> -->
+        
+        
       </article>
+    </section>-->
+
+    <!-- MAGAZINES -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Magazines</h2>
+      </div>
+
+      <!-- CMS members will render here -->
+      <div class="blog-grid" id="magazinesGrid"></div>
+
+      <!-- Dummy  (keep for now, will remove later) 
+      <div class="blog-grid">
+
+        
+        <article class="announcement-card magazine-card">
+
+          <img src="/assets/images/mag-cover.jpg" alt="Magazine Cover" class="magazine-cover" />
+
+          <h3 class="section-title">Magazine Title</h3>
+
+          <p class="section-desc">Year</p>
+
+          <a href="#" class="btn btn-outline">
+            Download PDF
+          </a>
+
+        </article>
+
+      </div>-->
+
+      <div class="blog-grid">
+
+        <div class="announcement-card magazine-card">
+          <p class="section-desc" style="text-align:center;">
+            The first edition of the TCF magazine will be published soon.
+          </p>
+
+          <span class="btn btn-outline" style="pointer-events:none; opacity:0.6;">
+            Coming Soon
+          </span>
+        </div>
+
+      </div>
+
+
     </section>
-
-   <!-- MAGAZINES -->
-<section class="section">
-  <div class="section-header">
-    <h2 class="section-title">Magazines</h2>
-  </div>
-
-  <div class="blog-grid">
-
-    <!-- Magazine Card -->
-    <article class="announcement-card magazine-card">
-
-      <img
-        src="/assets/images/mag-cover.jpg"
-        alt="Magazine Cover"
-        class="magazine-cover"
-      />
-
-      <h3 class="section-title">Magazine Title</h3>
-
-      <p class="section-desc">Year</p>
-
-      <a href="#" class="btn btn-outline">
-        Download PDF
-      </a>
-
-    </article>
-
-  </div>
-</section>
 
 
   </main>
@@ -136,8 +152,8 @@
 
         <!-- RIGHT: CONTACT + SOCIAL -->
         <div class="footer-right">
-          <a href="mailto:tcf.ldce@gmail.com" class="footer-email">
-            tcf.ldce@gmail.com
+          <a href="mailto:thecyberforce.ldce@gmail.com" class="footer-email">
+            thecyberforce.ldce@gmail.com
           </a>
 
           <div class="footer-social">
@@ -189,6 +205,8 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
   <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/magazines.js" defer></script>
+
 </body>
 
 </html>

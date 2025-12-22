@@ -5,14 +5,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Events — TCF</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/style.css" />
+
   <meta name="description" content="TCF — Events, workshops and past meetups." />
 </head>
 
 <body class="site-body">
   <canvas id="particles-canvas"></canvas>
+
   <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
@@ -20,7 +23,6 @@
         <img src="/assets/images/logo.png" alt="TCF Logo" class="brand-logo" />
         <div>
           <div class="brand-title">TCF</div>
-          <!--<div class="brand-sub">LD College of Engineering</div>-->
         </div>
       </a>
 
@@ -64,7 +66,7 @@
       <div class="section-header">
         <h1 class="section-title">Events</h1>
         <p class="section-desc">
-          Upcoming and past events organised by TCF.
+          Upcoming and past events organised by The Cyber Force.
         </p>
       </div>
     </section>
@@ -77,35 +79,18 @@
 
       <div class="events-grid">
 
-        <article class="announcement-card">
-          <img src="/assets/images/event1.jpg" alt="Intro to Web Security workshop" class="event-image">
-          <p class="section-desc">12 Jan 2026</p>
-          <h3 class="section-title">Intro to Web Security — Workshop</h3>
+        <!-- Placeholder card (shown until real events are added) -->
+        <div class="announcement-card">
+          <h3 class="section-title">Events Coming Soon</h3>
           <p class="section-desc">
-            Hands-on workshop covering XSS, SQLi and secure coding basics.
+            We’re planning workshops, CTFs, and technical sessions.
+            Event details will be announced shortly.
           </p>
-          <a href="#" class="btn btn-outline">View</a>
-        </article>
 
-        <article class="announcement-card">
-          <img src="/assets/images/event-placeholder.jpg" alt="CTF event" class="event-image">
-          <p class="section-desc">Date TBD</p>
-          <h3 class="section-title">CTF — Campus Qualifier</h3>
-          <p class="section-desc">
-            Team-based capture-the-flag focused on beginner and intermediate tasks.
-          </p>
-          <a href="#" class="btn btn-outline">View</a>
-        </article>
-
-        <article class="announcement-card">
-          <img src="/assets/images/event-placeholder.jpg" alt="Reverse engineering series" class="event-image">
-          <p class="section-desc">Date TBD</p>
-          <h3 class="section-title">Reverse Engineering — Mini Series</h3>
-          <p class="section-desc">
-            Introductory sessions on reversing binary challenges and tooling.
-          </p>
-          <a href="#" class="btn btn-outline">View</a>
-        </article>
+          <span class="btn btn-outline" style="pointer-events:none; opacity:0.6;">
+            Stay Tuned
+          </span>
+        </div>
 
       </div>
     </section>
@@ -118,56 +103,38 @@
 
       <div class="events-grid">
 
-        <article class="announcement-card">
-          <img src="/assets/images/event2.jpg" alt="Cryptography seminar" class="event-image">
-          <p class="section-desc">10 Nov 2025</p>
-          <h3 class="section-title">Intro to Cryptography — Seminar</h3>
-          <a href="#" class="btn btn-outline">Read recap</a>
-        </article>
-
-        <article class="announcement-card">
-          <img src="/assets/images/event3.jpg" alt="Secure coding workshop" class="event-image">
-          <p class="section-desc">05 Oct 2025</p>
-          <h3 class="section-title">Secure Coding — Workshop</h3>
-          <a href="#" class="btn btn-outline">Read recap</a>
-        </article>
-
-        <article class="announcement-card">
-          <img src="/assets/images/event4.jpg" alt="Networking lab" class="event-image">
-          <p class="section-desc">22 Sep 2025</p>
-          <h3 class="section-title">Intro to Networking — Lab</h3>
-          <a href="#" class="btn btn-outline">Read recap</a>
-        </article>
+        <!-- Past events will be listed here once available -->
+        <div class="announcement-card">
+          <p class="section-desc">
+            Past event highlights will be published here soon.
+          </p>
+        </div>
 
       </div>
     </section>
 
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
 
-      <!-- MAIN FOOTER ROW -->
       <div class="footer-main">
 
-        <!-- LEFT: BRAND -->
         <div class="footer-brand">
-          <!-- <img src="/assets/images/logo.png" alt="TCF Logo" class="footer-logo" />-->
           <div class="footer-brand-text">
             <div class="footer-brand-title">TCF</div>
             <div class="footer-brand-sub">LD College of Engineering</div>
           </div>
         </div>
 
-        <!-- RIGHT: CONTACT + SOCIAL -->
         <div class="footer-right">
-          <a href="mailto:tcf.ldce@gmail.com" class="footer-email">
-            tcf.ldce@gmail.com
+          <a href="mailto:thecyberforce.ldce@gmail.com" class="footer-email">
+            thecyberforce.ldce@gmail.com
           </a>
 
           <div class="footer-social">
             <a href="https://www.instagram.com/tcf_ldce" aria-label="Instagram">
-              <!-- Instagram SVG -->
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <rect x="2" y="2" width="20" height="20" rx="5" />
                 <circle cx="12" cy="12" r="4" />
@@ -175,7 +142,6 @@
               </svg>
             </a>
 
-            <!-- LinkedIn (add URL later) -->
             <a href="#" aria-label="LinkedIn">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <rect x="2" y="2" width="20" height="20" rx="4" />
@@ -189,7 +155,6 @@
 
       </div>
 
-      <!-- COPYRIGHT -->
       <div class="footer-copy">
         © <span id="year"></span> TCF — LDCE. All rights reserved.
       </div>
@@ -197,10 +162,8 @@
     </div>
   </footer>
 
-
-  <!-- SCRIPTS -->
+  <!-- JS -->
   <script>
-    // Mobile nav toggle
     const navToggle = document.getElementById('nav-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const iconOpen = document.getElementById('icon-open');
@@ -214,27 +177,11 @@
       });
     }
 
-    // Footer year
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
   </script>
 
-  <!-- Netlify Identity widget -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
-
-  <!-- Custom JS (if you have extra behavior) -->
   <script src="/assets/js/main.js" defer></script>
 </body>
-
 </html>
+  

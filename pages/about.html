@@ -64,23 +64,23 @@
     <section class="section">
       <div class="section-header">
         <h1 class="section-title">About TCF</h1>
-        <p class="section-desc">Who we are and what we do.</p>
+        <p class="section-desc">A student-led cybersecurity community at LDCE focused on hands-on learning and ethical
+          security practices.</p>
       </div>
     </section>
 
     <!-- MISSION & VISION -->
     <section class="section">
       <div class="mission-vision">
-        <div>
+        <div class="announcement-card">
           <h3 class="mv-title">Mission</h3>
           <p class="mv-text">
-            Our mission is to build practical cybersecurity skills among students
-            through hands-on workshops, capture-the-flag competitions, mentoring,
-            and open knowledge sharing.
+            Our mission is to build strong practical cybersecurity skills among students through hands-on workshops,
+            capture-the-flag competitions, mentoring, and open knowledge sharing.
           </p>
         </div>
 
-        <div>
+        <div class="announcement-card">
           <h3 class="mv-title">Vision</h3>
           <p class="mv-text">
             To create a campus-wide community that empowers students to explore
@@ -96,7 +96,10 @@
       <div class="section-header">
         <h2 class="section-title">Team</h2>
       </div>
+      <!-- CMS members will render here -->
+      <div class="team-grid" id="teamGrid"></div>
 
+      <!-- Dummy member (keep for now, will remove later) 
       <div class="team-grid">
         <div class="card team-card">
 
@@ -105,12 +108,12 @@
           <h3 class="section-title">Member Name</h3>
           <p class="member-role">Role</p>
 
-          <!-- SOCIAL ICONS -->
+          
           <div class="member-socials">
 
-            <!-- Instagram -->
+            
             <a href="#" class="member-social" aria-label="Instagram" target="_blank" rel="noopener">
-              <!-- Instagram SVG -->
+              
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <rect x="2" y="2" width="20" height="20" rx="5" />
                 <circle cx="12" cy="12" r="4" />
@@ -118,9 +121,9 @@
               </svg>
             </a>
 
-            <!-- LinkedIn -->
+            
             <a href="#" class="member-social" aria-label="LinkedIn" target="_blank" rel="noopener">
-              <!-- LinkedIn SVG -->
+            
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <rect x="2" y="2" width="20" height="20" rx="4" />
                 <line x1="7" y1="10" x2="7" y2="17" />
@@ -133,18 +136,31 @@
 
         </div>
 
+      </div>-->
+
+      <div class="team-grid">
+
+        <div class="announcement-card team-card">
+          <p class="section-desc" style="text-align:center;">
+            Team members will be announced soon.
+          </p>
+        </div>
+
       </div>
+
     </section>
 
     <!-- TIMELINE -->
     <section class="section">
-      <div class="section-header">
+      <div class="section-header ">
         <h2 class="section-title">Timeline</h2>
       </div>
 
       <p class="section-desc">
-        Founded in 2024, TCF has organized workshops on web security,
-        reverse engineering, and hosted multiple CTF events.
+        Founded in 2024, TCF has organized hands-on cybersecurity workshops,
+        CTF events, and learning sessions focused on practical security skills.
+
+
       </p>
     </section>
 
@@ -167,8 +183,8 @@
 
         <!-- RIGHT: CONTACT + SOCIAL -->
         <div class="footer-right">
-          <a href="mailto:tcf.ldce@gmail.com" class="footer-email">
-            tcf.ldce@gmail.com
+          <a href="mailto:thecyberforce.ldce@gmail.com" class="footer-email">
+            thecyberforce.ldce@gmail.com
           </a>
 
           <div class="footer-social">
@@ -219,6 +235,8 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
   <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/members.js" defer></script>
+
 </body>
 
 </html>

@@ -116,6 +116,7 @@ p {
 .section-desc {
   max-width: 720px;
   color: var(--muted-2);
+  font-size: 1.2rem;
 }
 
 /* ---------- Header ---------- */
@@ -226,7 +227,7 @@ p {
 
 /* Hero title OUTSIDE slideshow */
 .hero {
-  margin-bottom: 120px;
+  margin-bottom: 0px;
 }
 
 .hero-title {
@@ -274,7 +275,7 @@ p {
   margin: 0 auto;
   padding-top: 200px;
   /* 👈 THIS creates top space */
-  padding-bottom: 200px;
+  padding-bottom: 0px;
   text-align: center;
 }
 
