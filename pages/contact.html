@@ -73,10 +73,11 @@
       <div class="announcement-card contact-form-card">
         <h3 class="section-title">Send a Message</h3>
 
-        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
-          action="/contact-success.html" style="margin-top:20px;">
+        <form name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" id="contact-form"
+          style="margin-top:20px;">
           <input type="hidden" name="form-name" value="contact" />
-
+          <!-- Email subject for Netlify notification -->
+          <input type="hidden" name="subject" value="New Contact Message from TCF Website" />
           <!-- Honeypot -->
           <p style="display:none;">
             <label>Don’t fill this out: <input name="bot-field" /></label>
@@ -101,6 +102,13 @@
             Send Message
           </button>
         </form>
+        <div id="form-success" class="announcement-card" style="display:none; margin-top:20px; text-align:center;">
+          <h3 class="section-title">Message Sent</h3>
+          <p class="section-desc">
+            Thank you for reaching out. We’ll get back to you soon.
+          </p>
+        </div>
+
       </div>
 
       <!-- EMAIL + SOCIAL (SECONDARY) 
@@ -138,57 +146,57 @@
   </main>
 
   <footer class="site-footer">
-  <div class="container footer-inner">
+    <div class="container footer-inner">
 
-    <!-- MAIN FOOTER ROW -->
-    <div class="footer-main">
+      <!-- MAIN FOOTER ROW -->
+      <div class="footer-main">
 
-      <!-- LEFT: BRAND -->
-      <div class="footer-brand">
-       <!-- <img src="/assets/images/logo.png" alt="TCF Logo" class="footer-logo" />-->
-        <div class="footer-brand-text">
-          <div class="footer-brand-title">TCF</div>
-          <div class="footer-brand-sub">LD College of Engineering</div>
+        <!-- LEFT: BRAND -->
+        <div class="footer-brand">
+          <!-- <img src="/assets/images/logo.png" alt="TCF Logo" class="footer-logo" />-->
+          <div class="footer-brand-text">
+            <div class="footer-brand-title">TCF</div>
+            <div class="footer-brand-sub">LD College of Engineering</div>
+          </div>
         </div>
+
+        <!-- RIGHT: CONTACT + SOCIAL -->
+        <div class="footer-right">
+          <a href="mailto:thecyberforce.ldce@gmail.com" class="footer-email">
+            thecyberforce.ldce@gmail.com
+          </a>
+
+          <div class="footer-social">
+            <a href="https://www.instagram.com/tcf_ldce" aria-label="Instagram">
+              <!-- Instagram SVG -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="18" cy="6" r="1" />
+              </svg>
+            </a>
+
+            <!-- LinkedIn (add URL later) -->
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <rect x="2" y="2" width="20" height="20" rx="4" />
+                <line x1="7" y1="10" x2="7" y2="17" />
+                <line x1="7" y1="7" x2="7.01" y2="7" />
+                <path d="M11 17v-4a2 2 0 0 1 4 0v4" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
       </div>
 
-      <!-- RIGHT: CONTACT + SOCIAL -->
-      <div class="footer-right">
-        <a href="mailto:thecyberforce.ldce@gmail.com" class="footer-email">
-          thecyberforce.ldce@gmail.com
-        </a>
-
-        <div class="footer-social">
-          <a href="https://www.instagram.com/tcf_ldce" aria-label="Instagram">
-            <!-- Instagram SVG -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <rect x="2" y="2" width="20" height="20" rx="5"/>
-              <circle cx="12" cy="12" r="4"/>
-              <circle cx="18" cy="6" r="1"/>
-            </svg>
-          </a>
-
-          <!-- LinkedIn (add URL later) -->
-          <a href="#" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <rect x="2" y="2" width="20" height="20" rx="4"/>
-              <line x1="7" y1="10" x2="7" y2="17"/>
-              <line x1="7" y1="7" x2="7.01" y2="7"/>
-              <path d="M11 17v-4a2 2 0 0 1 4 0v4"/>
-            </svg>
-          </a>
-        </div>
+      <!-- COPYRIGHT -->
+      <div class="footer-copy">
+        © <span id="year"></span> TCF — LDCE. All rights reserved.
       </div>
 
     </div>
-
-    <!-- COPYRIGHT -->
-    <div class="footer-copy">
-      © <span id="year"></span> TCF — LDCE. All rights reserved.
-    </div>
-
-  </div>
-</footer>
+  </footer>
 
   <script>
     const navToggle = document.getElementById('nav-toggle');
@@ -206,6 +214,31 @@
   </script>
 
   <script src="/assets/js/main.js" defer></script>
+  <script>
+    const form = document.getElementById("contact-form");
+    const successBox = document.getElementById("form-success");
+
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        fetch("/", {
+          method: "POST",
+          body: formData
+        })
+          .then(() => {
+            form.style.display = "none";
+            successBox.style.display = "block";
+          })
+          .catch(() => {
+            alert("Something went wrong. Please try again later.");
+          });
+      });
+    }
+  </script>
+
 </body>
 
 </html>
