@@ -7,7 +7,7 @@ fetch('/content/resources/index.json')
     const grid = document.getElementById('resourcesGrid');
     if (!grid) return;
 
-    const resources = data.resources || [];
+    const resources = data.items || [];
 
     // CMS empty → safe exit
     if (!Array.isArray(resources) || resources.length === 0) {
