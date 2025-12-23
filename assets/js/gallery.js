@@ -3,11 +3,13 @@ fetch('/content/gallery/index.json')
     if (!res.ok) throw new Error('Gallery JSON not found');
     return res.json();
   })
-  .then(events => {
+  .then(data => {
     const grid = document.getElementById('galleryEvents');
     if (!grid) return;
 
-    // CMS empty → do nothing safely
+    const events = data.events || [];
+
+    // CMS empty → safe exit
     if (!Array.isArray(events) || events.length === 0) {
       console.log('No gallery events yet (CMS empty)');
       return;

@@ -10,98 +10,128 @@ public_folder: "/assets/uploads"
 site_url: "https://tcf-ldce.netlify.app"
 
 collections:
+
+  # =====================
+  # BLOG (single JSON)
+  # =====================
   - name: "blog"
     label: "Blog"
-    folder: "content/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    file: "content/blog/index.json"
+    format: "json"
+    create: false
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Cover Image", name: "cover_image", widget: "image" }
-      - { label: "Excerpt", name: "excerpt", widget: "text" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Posts"
+        name: "posts"
+        widget: "list"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Date", name: "date", widget: "datetime" }
+          - { label: "Author", name: "author", widget: "string" }
+          - { label: "Cover Image", name: "cover_image", widget: "image" }
+          - { label: "Excerpt", name: "excerpt", widget: "text" }
+          - { label: "Body", name: "body", widget: "markdown" }
 
+  # =====================
+  # EVENTS (single JSON)
+  # =====================
   - name: "events"
     label: "Events"
-    folder: "content/events"
-    create: true
-    slug: "{{slug}}"
+    file: "content/events/index.json"
+    format: "json"
+    create: false
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Location", name: "location", widget: "string" }
-      - { label: "Cover Image", name: "cover_image", widget: "image" }
-      - { label: "Excerpt", name: "excerpt", widget: "text" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Registration Link", name: "registration_link", widget: "string", required: false }
-      - label: "Event Type"
-        name: "event_type"
-        widget: "select"
-        options: ["Upcoming", "Past"]
+      - label: "Events"
+        name: "events"
+        widget: "list"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Date", name: "date", widget: "datetime" }
+          - { label: "Location", name: "location", widget: "string" }
+          - { label: "Cover Image", name: "cover_image", widget: "image" }
+          - { label: "Excerpt", name: "excerpt", widget: "text" }
+          - { label: "Registration Link", name: "registration_link", widget: "string", required: false }
+          - label: "Event Type"
+            name: "event_type"
+            widget: "select"
+            options: ["Upcoming", "Past"]
 
+  # =====================
+  # MAGAZINES (single JSON)
+  # =====================
   - name: "magazines"
     label: "Magazines"
-    folder: "content/magazines"
-    create: true
-    slug: "{{year}}-{{slug}}"
+    file: "content/magazines/index.json"
+    format: "json"
+    create: false
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Year", name: "year", widget: "number" }
-      - { label: "Cover Image", name: "cover_image", widget: "image" }
-      - { label: "PDF File", name: "pdf_file", widget: "file" }
-      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - label: "Magazines"
+        name: "magazines"
+        widget: "list"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Year", name: "year", widget: "number" }
+          - { label: "Cover Image", name: "cover_image", widget: "image" }
+          - { label: "PDF File", name: "pdf_file", widget: "file" }
+          - { label: "Excerpt", name: "excerpt", widget: "text" }
 
-  # ✅ UPDATED GALLERY (JSON + event-based photos)
+  # =====================
+  # GALLERY (single JSON)
+  # =====================
   - name: "gallery"
     label: "Gallery"
-    folder: "content/gallery"
-    create: true
+    file: "content/gallery/index.json"
     format: "json"
-    extension: "json"
+    create: false
     fields:
-      - { label: "Event Name", name: "event", widget: "string" }
-      - label: "Photos"
-        name: "photos"
+      - label: "Events"
+        name: "events"
         widget: "list"
-        field:
-          label: "Image"
-          name: "image"
-          widget: "image"
+        fields:
+          - { label: "Event Name", name: "event", widget: "string" }
+          - label: "Photos"
+            name: "photos"
+            widget: "list"
+            field:
+              label: "Image"
+              name: "image"
+              widget: "image"
 
+  # =====================
+  # TEAM (single JSON)
+  # =====================
   - name: "team"
     label: "Team"
-    folder: "content/team"
-    create: true
+    file: "content/team/index.json"
+    format: "json"
+    create: false
     fields:
-    - { label: "Name", name: "name", widget: "string" }
+      - label: "Members"
+        name: "members"
+        widget: "list"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Role", name: "role", widget: "string" }
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Instagram", name: "instagram", widget: "string", required: false }
+          - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
 
-    - { label: "Role", name: "role", widget: "string" }
-
-    - { label: "Image", name: "image", widget: "image" }
-
-    - label: "Instagram"
-      name: "instagram"
-      widget: "string"
-      required: false
-      hint: "Full Instagram profile URL"
-
-    - label: "LinkedIn"
-      name: "linkedin"
-      widget: "string"
-      required: false
-      hint: "Full LinkedIn profile URL"
-
+  # =====================
+  # RESOURCES (single JSON)
+  # =====================
   - name: "resources"
     label: "Resources"
-    folder: "content/resources"
-    create: true
+    file: "content/resources/index.json"
+    format: "json"
+    create: false
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - label: "Category"
-        name: "category"
-        widget: "select"
-        options: ["Tutorial", "Tool"]
-      - { label: "Link", name: "link", widget: "string" }
-      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - label: "Resources"
+        name: "resources"
+        widget: "list"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - label: "Category"
+            name: "category"
+            widget: "select"
+            options: ["Tutorial", "Tool"]
+          - { label: "Link", name: "link", widget: "string" }
+          - { label: "Excerpt", name: "excerpt", widget: "text" }

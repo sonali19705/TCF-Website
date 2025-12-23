@@ -3,9 +3,11 @@ fetch('/content/resources/index.json')
     if (!res.ok) throw new Error('Resources JSON not found');
     return res.json();
   })
-  .then(resources => {
+  .then(data => {
     const grid = document.getElementById('resourcesGrid');
     if (!grid) return;
+
+    const resources = data.resources || [];
 
     // CMS empty → safe exit
     if (!Array.isArray(resources) || resources.length === 0) {

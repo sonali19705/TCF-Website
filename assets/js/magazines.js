@@ -1,11 +1,13 @@
-    fetch('/content/magazines/index.json')
+fetch('/content/magazines/index.json')
   .then(res => {
     if (!res.ok) throw new Error('Magazines JSON not found');
     return res.json();
   })
-  .then(magazines => {
+  .then(data => {
     const grid = document.getElementById('magazinesGrid');
     if (!grid) return;
+
+    const magazines = data.magazines || [];
 
     // CMS empty → safe exit
     if (!Array.isArray(magazines) || magazines.length === 0) {
@@ -31,7 +33,10 @@
 
         ${
           item.pdf_file
-            ? `<a href="${item.pdf_file}" class="btn btn-outline" target="_blank">
+            ? `<a href="${item.pdf_file}"
+                 class="btn btn-outline"
+                 target="_blank"
+                 rel="noopener">
                  Download PDF
                </a>`
             : ''
@@ -44,4 +49,3 @@
   .catch(err => {
     console.warn('Magazines not rendered yet:', err.message);
   });
-  

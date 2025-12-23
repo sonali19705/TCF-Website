@@ -3,24 +3,28 @@ fetch('/content/team/index.json')
     if (!res.ok) throw new Error('Members JSON not found');
     return res.json();
   })
-  .then(members => {
+  .then(data => {
     const grid = document.getElementById('teamGrid');
     if (!grid) return;
 
-    // If CMS has no members yet → show nothing safely
+    const members = data.members || [];
+
+    // CMS empty → safe exit
     if (!Array.isArray(members) || members.length === 0) {
       console.log('No team members yet (CMS empty)');
       return;
     }
 
-    grid.innerHTML = ''; // clear container
+    grid.innerHTML = '';
 
     members.forEach(member => {
       const card = document.createElement('div');
       card.className = 'team-card';
 
       card.innerHTML = `
-        <img src="${member.image || ''}" alt="${member.name || ''}" class="team-avatar" />
+        <img src="${member.image || ''}"
+             alt="${member.name || ''}"
+             class="team-avatar" />
 
         <h3 class="section-title">${member.name || ''}</h3>
         <p class="member-role">${member.role || ''}</p>
@@ -28,7 +32,10 @@ fetch('/content/team/index.json')
         <div class="member-socials">
           ${
             member.instagram
-              ? `<a href="${member.instagram}" class="member-social" target="_blank" aria-label="Instagram">
+              ? `<a href="${member.instagram}"
+                   class="member-social"
+                   target="_blank"
+                   aria-label="Instagram">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                     <rect x="2" y="2" width="20" height="20" rx="5"/>
                     <circle cx="12" cy="12" r="4"/>
@@ -40,7 +47,10 @@ fetch('/content/team/index.json')
 
           ${
             member.linkedin
-              ? `<a href="${member.linkedin}" class="member-social" target="_blank" aria-label="LinkedIn">
+              ? `<a href="${member.linkedin}"
+                   class="member-social"
+                   target="_blank"
+                   aria-label="LinkedIn">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                     <rect x="2" y="2" width="20" height="20" rx="4"/>
                     <line x1="7" y1="10" x2="7" y2="17"/>
