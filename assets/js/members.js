@@ -7,7 +7,7 @@ fetch('/content/team/index.json')
     const grid = document.getElementById('teamGrid');
     if (!grid) return;
 
-    const members = data.members || [];
+    const members = data.items || [];
 
     // CMS empty → safe exit
     if (!Array.isArray(members) || members.length === 0) {
@@ -22,9 +22,13 @@ fetch('/content/team/index.json')
       card.className = 'team-card';
 
       card.innerHTML = `
-        <img src="${member.image || ''}"
-             alt="${member.name || ''}"
-             class="team-avatar" />
+        ${
+          member.image
+            ? `<img src="${member.image}"
+                 alt="${member.name || ''}"
+                 class="team-avatar" />`
+            : ''
+        }
 
         <h3 class="section-title">${member.name || ''}</h3>
         <p class="member-role">${member.role || ''}</p>

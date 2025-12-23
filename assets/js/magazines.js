@@ -7,7 +7,7 @@ fetch('/content/magazines/index.json')
     const grid = document.getElementById('magazinesGrid');
     if (!grid) return;
 
-    const magazines = data.magazines || [];
+    const magazines = data.items || [];
 
     // CMS empty → safe exit
     if (!Array.isArray(magazines) || magazines.length === 0) {
@@ -22,11 +22,15 @@ fetch('/content/magazines/index.json')
       card.className = 'announcement-card';
 
       card.innerHTML = `
-        <img
-          src="${item.cover_image || ''}"
-          alt="${item.title || ''}"
-          class="magazine-cover"
-        />
+        ${
+          item.cover_image
+            ? `<img
+                 src="${item.cover_image}"
+                 alt="${item.title || ''}"
+                 class="magazine-cover"
+               />`
+            : ''
+        }
 
         <h3 class="section-title">${item.title || ''}</h3>
         <p class="section-desc">${item.year || ''}</p>

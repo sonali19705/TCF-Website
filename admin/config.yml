@@ -16,37 +16,49 @@ collections:
   # ======================
   - name: "blog"
     label: "Blog"
-    folder: "content/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Cover Image", name: "cover_image", widget: "image" }
-      - { label: "Excerpt", name: "excerpt", widget: "text" }
-      - { label: "Body", name: "body", widget: "markdown" }
+    files:
+    - file: "content/blog/index.json"
+      label: "Blog Posts"
+      name: "blog"
+      fields:
+        - label: "Posts"
+          name: "items"
+          widget: "list"
+          fields:
+            - { label: "Title", name: "title", widget: "string" }
+            - { label: "Publish Date", name: "date", widget: "datetime" }
+            - { label: "Author", name: "author", widget: "string" }
+            - { label: "Cover Image", name: "cover_image", widget: "image" }
+            - { label: "Excerpt", name: "excerpt", widget: "text" }
+            - { label: "Body", name: "body", widget: "text" }
+
 
   # ======================
-  # EVENTS (multiple posts)
-  # ======================
+# EVENTS (single JSON)
+# ======================
   - name: "events"
     label: "Events"
-    folder: "content/events"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Location", name: "location", widget: "string" }
-      - { label: "Cover Image", name: "cover_image", widget: "image" }
-      - { label: "Excerpt", name: "excerpt", widget: "text" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Registration Link", name: "registration_link", widget: "string", required: false }
-      - label: "Event Type"
-        name: "event_type"
-        widget: "select"
-        options: ["Upcoming", "Past"]
+    files:
+    - file: "content/events/index.json"
+      label: "Events"
+      name: "events"
+      fields:
+        - label: "Events List"
+          name: "items"
+          widget: "list"
+          fields:
+            - { label: "Title", name: "title", widget: "string" }
+            - { label: "Date", name: "date", widget: "datetime" }
+            - { label: "Location", name: "location", widget: "string" }
+            - { label: "Cover Image", name: "cover_image", widget: "image" }
+            - { label: "Excerpt", name: "excerpt", widget: "text" }
+            - { label: "Body", name: "body", widget: "text", required: false }
+            - { label: "Registration Link", name: "registration_link", widget: "string", required: false }
+            - label: "Event Type"
+              name: "event_type"
+              widget: "select"
+              options: ["Upcoming", "Past"]
+
 
   # ======================
   # TEAM (single JSON)

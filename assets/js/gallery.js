@@ -7,7 +7,7 @@ fetch('/content/gallery/index.json')
     const grid = document.getElementById('galleryEvents');
     if (!grid) return;
 
-    const events = data.events || [];
+    const events = data.items || [];
 
     // CMS empty → safe exit
     if (!Array.isArray(events) || events.length === 0) {
@@ -18,12 +18,18 @@ fetch('/content/gallery/index.json')
     grid.innerHTML = '';
 
     events.forEach(event => {
+      // use first photo as cover if exists
+      const coverImage =
+        event.photos && event.photos.length > 0
+          ? event.photos[0].image
+          : '';
+
       const card = document.createElement('div');
       card.className = 'announcement-card gallery-event-card';
 
       card.innerHTML = `
         <div class="gallery-event-cover">
-          <img src="${event.cover || ''}" alt="${event.event || ''}">
+          ${coverImage ? `<img src="${coverImage}" alt="${event.event || ''}">` : ''}
           <div class="gallery-event-overlay">
             <span>View Photos</span>
           </div>
