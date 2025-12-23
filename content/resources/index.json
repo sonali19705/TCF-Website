@@ -1,3 +1,10 @@
 {
-  "items": []
+  "items": [
+    {
+      "title": "kali linux tutorial",
+      "category": "Tutorial",
+      "link": "https://www.geeksforgeeks.org/ethical-hacking/kali-linux-tutorial/",
+      "excerpt": "This Kali Linux tutorial is designed to guide users—from beginners to professionals—through every aspect of Kali Linux"
+    }
+  ]
 }
