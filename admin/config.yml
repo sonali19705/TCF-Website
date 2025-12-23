@@ -7,7 +7,7 @@ publish_mode: simple
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
-site_url: "https://tcf-ldce.netlify.app"
+site_url: "https://thecyberforce-ldce.netlify.app/"
 
 collections:
 
