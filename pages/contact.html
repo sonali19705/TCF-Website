@@ -73,15 +73,26 @@
       <div class="announcement-card contact-form-card">
         <h3 class="section-title">Send a Message</h3>
 
-        <form name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" id="contact-form"
+        <!-- ✅ NETLIFY FORM (DETECTION SAFE) -->
+        <form name="contact" method="POST" netlify netlify-honeypot="bot-field" action="/pages/contact.html"
           style="margin-top:20px;">
+
+          <!-- REQUIRED FOR NETLIFY -->
           <input type="hidden" name="form-name" value="contact" />
-          <!-- Email subject for Netlify notification -->
           <input type="hidden" name="subject" value="New Contact Message from TCF Website" />
-          <!-- Honeypot -->
+
+          <!-- HONEYPOT -->
           <p style="display:none;">
-            <label>Don’t fill this out: <input name="bot-field" /></label>
+            <label>
+              Don’t fill this out:
+              <input name="bot-field" />
+            </label>
           </p>
+
+          <!-- NOSCRIPT FALLBACK (IMPORTANT) -->
+          <noscript>
+            <p>Please enable JavaScript to use this form.</p>
+          </noscript>
 
           <div class="form-group">
             <label>Name</label>
