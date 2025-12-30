@@ -17,10 +17,10 @@ fetch('/content/gallery/index.json')
     grid.innerHTML = '';
 
     events.forEach(event => {
-      // ✅ Use first photo as cover image
+      // ✅ FIX: photos are strings, not objects
       const coverImage =
-        event.photos && event.photos.length > 0
-          ? event.photos[0].image
+        Array.isArray(event.photos) && event.photos.length > 0
+          ? event.photos[0]
           : '';
 
       const card = document.createElement('div');
@@ -45,5 +45,5 @@ fetch('/content/gallery/index.json')
     });
   })
   .catch(err => {
-    console.warn('Gallery not rendered yet:', err.message);
+    console.warn('Gallery not rendered:', err.message);
   });
