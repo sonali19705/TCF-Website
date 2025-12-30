@@ -461,6 +461,51 @@ textarea.form-input {
   opacity: 1;
 }
 
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.gallery-modal.open {
+  display: flex;
+}
+
+.gallery-modal-content {
+  background: #0f1720;
+  max-width: 90%;
+  max-height: 90%;
+  padding: 20px;
+  border-radius: 12px;
+  overflow-y: auto;
+}
+
+.gallery-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.gallery-modal-img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.gallery-modal-close {
+  background: none;
+  color: white;
+  border: none;
+  font-size: 22px;
+  float: right;
+  cursor: pointer;
+}
+
+
 /* ---------- Grids ---------- */
 .events-grid,
 .resources-grid,

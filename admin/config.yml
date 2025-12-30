@@ -122,25 +122,26 @@ collections:
               - { label: "PDF File", name: "pdf_file", widget: "file" }
               - { label: "Excerpt", name: "excerpt", widget: "text" }
 
-  # ======================
-  # GALLERY (single JSON)
-  # ======================
+# ======================
+# GALLERY (single JSON)
+# ======================
   - name: "gallery"
     label: "Gallery"
     files:
-      - file: "content/gallery/index.json"
-        label: "Gallery Events"
-        name: "gallery"
-        fields:
-          - label: "Events"
-            name: "items"
-            widget: "list"
-            fields:
-              - { label: "Event Name", name: "event", widget: "string" }
-              - label: "Photos"
-                name: "photos"
-                widget: "list"
-                field:
-                  label: "Image"
-                  name: "image"
-                  widget: "image"
+    - file: "content/gallery/index.json"
+      label: "Gallery Events"
+      name: "gallery"
+      fields:
+        - label: "Events"
+          name: "items"
+          widget: "list"
+          fields:
+            - { label: "Event Name", name: "event", widget: "string" }
+
+            - { label: "Cover Image", name: "cover", widget: "image" }
+
+            - label: "Photos"
+              name: "photos"
+              widget: "list"
+              field:
+                { label: "Image", name: "image", widget: "image" }
