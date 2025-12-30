@@ -5,6 +5,12 @@
       "category": "Tutorial",
       "link": "https://www.geeksforgeeks.org/ethical-hacking/kali-linux-tutorial/",
       "excerpt": "This Kali Linux tutorial is designed to guide users—from beginners to professionals—through every aspect of Kali Linux"
+    },
+    {
+      "title": "Nmap Tutorial",
+      "category": "Tutorial",
+      "link": "https://hackertarget.com/nmap-tutorial/",
+      "excerpt": "Learn how to use Nmap for network discovery, port scanning, and security analysis—from basic commands to advanced techniques."
     }
   ]
 }

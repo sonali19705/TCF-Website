@@ -1,3 +1,53 @@
 {
-  "items": []
+  "items": [
+    {
+      "name": "Samveg Shah",
+      "role": "President",
+      "image": "/assets/uploads/samveg.jpeg",
+      "instagram": "https://www.instagram.com/samveg1008?igsh=eWg4MTlpdHFpM2Y1",
+      "linkedin": "https://www.linkedin.com/in/samveg-shah-091224244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    },
+    {
+      "name": "Ibrahim Madakiya",
+      "role": "Chairman",
+      "instagram": "https://www.instagram.com/ibrahim_madakiya?igsh=eTBwY293MnlkYXdm",
+      "linkedin": " https://www.linkedin.com/in/ibrahim-madakiya?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      "image": "/assets/uploads/ibrahim.jpeg"
+    },
+    {
+      "name": "Asmita Rathod",
+      "role": "Secretary",
+      "instagram": "https://www.instagram.com/___asmita_rathod_?igsh=MTcyaGltdjVybG1haw==",
+      "linkedin": "https://www.linkedin.com/in/asmita-rathod17",
+      "image": "/assets/uploads/asmita.jpeg"
+    },
+    {
+      "name": "Sonali Kale ",
+      "role": "Technical Leader",
+      "instagram": "https://www.instagram.com/sonalii_kale?igsh=MXBwcTd6MzQ0emRuYg==",
+      "linkedin": "https://www.linkedin.com/in/sonaliikale/",
+      "image": "/assets/uploads/sonali.jpeg"
+    },
+    {
+      "name": "Arth Doshi",
+      "role": "Creative Leader",
+      "instagram": "https://www.instagram.com/arthdoshiii?igsh=bmV0NHNxc2plY3B2",
+      "linkedin": "https://www.linkedin.com/in/arth-doshi-8696bb291",
+      "image": "/assets/uploads/arth.jpeg"
+    },
+    {
+      "name": "Virti Gandhi",
+      "role": "Research Leader",
+      "instagram": "https://www.instagram.com/virtigandhi1708?igsh=MWZiMGw5bXFreWExaA==",
+      "linkedin": "https://www.linkedin.com/in/virti-gandhi-80a655290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      "image": "/assets/uploads/virti.jpeg"
+    },
+    {
+      "name": "Kukshi Shah",
+      "role": "Management Leader",
+      "instagram": "https://www.instagram.com/kukshiii_30/",
+      "linkedin": "https://www.linkedin.com/in/kukshi-shah-30107j7",
+      "image": "/assets/uploads/kukshi.jpeg"
+    }
+  ]
 }

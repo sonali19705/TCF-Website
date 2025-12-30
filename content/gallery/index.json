@@ -1,3 +1,19 @@
 {
-  "items": []
+  "items": [
+    {
+      "event": "Two Day workshop on Cyber Security",
+      "photos": [
+        "/assets/uploads/two.jpg",
+        "/assets/uploads/three.jpg",
+        "/assets/uploads/one.jpg"
+      ]
+    },
+    {
+      "event": "NFSU Visit",
+      "photos": [
+        "/assets/uploads/two.jpg",
+        "/assets/uploads/one.jpg"
+      ]
+    }
+  ]
 }
