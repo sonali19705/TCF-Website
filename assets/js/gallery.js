@@ -30,14 +30,14 @@ fetch('/content/gallery/index.json')
         <h3 class="section-title">${event.event}</h3>
       `;
 
-      // 👉 Click = open modal with all photos
+      // 👉 Click card → open modal with ALL images
       card.addEventListener('click', () => {
         modalTitle.textContent = event.event;
         modalImages.innerHTML = '';
 
-        event.photos.forEach(p => {
+        event.photos.forEach(src => {
           const img = document.createElement('img');
-          img.src = p.image;
+          img.src = src;                     // ✅ STRING, NOT object
           img.className = 'gallery-modal-img';
           modalImages.appendChild(img);
         });
