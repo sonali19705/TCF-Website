@@ -9,7 +9,12 @@ fetch('/content/gallery/index.json')
     const modalImages = document.getElementById('galleryModalImages');
     const modalTitle = document.getElementById('galleryModalTitle');
 
-    if (!grid) return;
+    // Fullscreen viewer
+    const viewer = document.getElementById('imageViewer');
+    const viewerImg = document.getElementById('imageViewerImg');
+    const viewerClose = document.querySelector('.image-viewer-close');
+
+    if (!grid || !modal || !modalImages || !modalTitle) return;
 
     const events = data.items || [];
     if (!events.length) return;
@@ -30,15 +35,22 @@ fetch('/content/gallery/index.json')
         <h3 class="section-title">${event.event}</h3>
       `;
 
-      // 👉 Click card → open modal with ALL images
+      // 👉 Click event card → open modal
       card.addEventListener('click', () => {
         modalTitle.textContent = event.event;
         modalImages.innerHTML = '';
 
         event.photos.forEach(src => {
           const img = document.createElement('img');
-          img.src = src;                     // ✅ STRING, NOT object
+          img.src = src;
           img.className = 'gallery-modal-img';
+
+          // 👉 Click image → fullscreen zoom
+          img.addEventListener('click', () => {
+            viewerImg.src = src;
+            viewer.classList.remove('hidden');
+          });
+
           modalImages.appendChild(img);
         });
 
@@ -47,6 +59,19 @@ fetch('/content/gallery/index.json')
 
       grid.appendChild(card);
     });
+
+    // ❌ Close fullscreen viewer
+    if (viewer && viewerClose) {
+      viewerClose.addEventListener('click', () => {
+        viewer.classList.add('hidden');
+      });
+
+      viewer.addEventListener('click', e => {
+        if (e.target === viewer) {
+          viewer.classList.add('hidden');
+        }
+      });
+    }
   })
   .catch(err => {
     console.warn('Gallery not rendered:', err.message);
