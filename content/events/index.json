@@ -1,3 +1,12 @@
 {
-  "items": []
+  "items": [
+    {
+      "date": "2024-09-12T05:30:00.000Z",
+      "event_type": "Past",
+      "title": "Unlocking the Secrets of Cybersecurity - 2 day workshop",
+      "location": "Annexe Building, L.D. College of Engineering (LDCE)",
+      "cover_image": "/assets/uploads/fullsizerender-4-.jpg",
+      "excerpt": "A two-day hands-on cybersecurity workshop organized by the IT Department of LDCE in collaboration with The Cyber Force (TCF), focusing on cybersecurity fundamentals, digital forensics, server security, and VAPT tools through expert-led sessions.\n"
+    }
+  ]
 }
