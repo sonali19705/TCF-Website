@@ -4,33 +4,28 @@ fetch('/content/events/index.json')
     return res.json();
   })
   .then(data => {
-    const grid = document.getElementById('eventsGrid');
-    if (!grid) return;
+    const upcomingGrid = document.getElementById('upcomingEventsGrid');
+    const pastGrid = document.getElementById('pastEventsGrid');
+
+    if (!upcomingGrid || !pastGrid) return;
 
     const events = data.items || [];
+    if (!events.length) return;
 
-    // CMS empty → safe exit
-    if (!Array.isArray(events) || events.length === 0) {
-      console.log('No events yet (CMS empty)');
-      return;
-    }
-
-    grid.innerHTML = '';
+    upcomingGrid.innerHTML = '';
+    pastGrid.innerHTML = '';
 
     events.forEach(event => {
       const card = document.createElement('article');
       card.className = 'announcement-card event-card';
 
       card.innerHTML = `
-        ${
-          event.cover_image
-            ? `<img
-                 src="${event.cover_image}"
-                 alt="${event.title || ''}"
-                 class="event-cover"
-               />`
-            : ''
-        }
+        ${event.cover_image ? `
+          <img
+            src="${event.cover_image}"
+            alt="${event.title || ''}"
+            class="event-cover"
+          />` : ''}
 
         <h3 class="section-title">${event.title || ''}</h3>
 
@@ -40,36 +35,29 @@ fetch('/content/events/index.json')
 
         <p class="event-meta">
           ${event.location || ''}
-          ${
-            event.date
-              ? ' · ' + new Date(event.date).toLocaleDateString()
-              : ''
-          }
+          ${event.date ? ' · ' + new Date(event.date).toLocaleDateString() : ''}
         </p>
 
         <div class="event-actions">
-          ${
-            event.registration_link
-              ? `<a href="${event.registration_link}"
-                   class="btn btn-outline"
-                   target="_blank"
-                   rel="noopener">
-                   Register
-                 </a>`
-              : ''
-          }
+          ${event.registration_link ? `
+            <a href="${event.registration_link}"
+               class="btn btn-outline"
+               target="_blank"
+               rel="noopener">
+              Register
+            </a>` : ''}
 
-          ${
-            event.event_type
-              ? `<span class="event-type">${event.event_type}</span>`
-              : ''
-          }
+          <span class="event-type">${event.event_type}</span>
         </div>
       `;
 
-      grid.appendChild(card);
+      if (event.event_type === 'Upcoming') {
+        upcomingGrid.appendChild(card);
+      } else {
+        pastGrid.appendChild(card);
+      }
     });
   })
   .catch(err => {
-    console.warn('Events not rendered yet:', err.message);
+    console.warn('Events not rendered:', err.message);
   });
