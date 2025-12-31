@@ -3,16 +3,19 @@
     {
       "event": "Two Day workshop on Cyber Security",
       "photos": [
-        "/assets/uploads/two.jpg",
-        "/assets/uploads/three.jpg",
-        "/assets/uploads/one.jpg"
-      ]
+        "/assets/uploads/fullsizerender-7-.jpg",
+        "/assets/uploads/fullsizerender-16-.jpg",
+        "/assets/uploads/fullsizerender-4-.jpg",
+        "/assets/uploads/fullsizerender-29-.jpg"
+      ],
+      "cover": "/assets/uploads/fullsizerender-7-.jpg"
     },
     {
       "event": "NFSU Visit",
+      "cover": "/assets/uploads/1714135502009.jpg",
       "photos": [
-        "/assets/uploads/two.jpg",
-        "/assets/uploads/one.jpg"
+        "/assets/uploads/1714135502527.jpg",
+        "/assets/uploads/1714135502591.jpg"
       ]
     }
   ]
