@@ -1,13 +1,13 @@
 fetch('/content/events/index.json')
-  .then(res => {
-    if (!res.ok) throw new Error('Events JSON not found');
-    return res.json();
-  })
+  .then(res => res.json())
   .then(data => {
     const upcomingGrid = document.getElementById('upcomingEventsGrid');
     const pastGrid = document.getElementById('pastEventsGrid');
 
-    if (!upcomingGrid || !pastGrid) return;
+    const modal = document.getElementById('eventModal');
+    const modalTitle = document.getElementById('eventModalTitle');
+    const modalBody = document.getElementById('eventModalBody');
+    const modalClose = document.getElementById('eventModalClose');
 
     const events = data.items || [];
     if (!events.length) return;
@@ -19,37 +19,40 @@ fetch('/content/events/index.json')
       const card = document.createElement('article');
       card.className = 'announcement-card event-card';
 
+      // ✅ CARD = minimal info only
       card.innerHTML = `
-        ${event.cover_image ? `
-          <img
-            src="${event.cover_image}"
-            alt="${event.title || ''}"
-            class="event-cover"
-          />` : ''}
-
-        <h3 class="section-title">${event.title || ''}</h3>
-
-        <p class="section-desc">
-          ${event.excerpt || ''}
-        </p>
-
-        <p class="event-meta">
-          ${event.location || ''}
-          ${event.date ? ' · ' + new Date(event.date).toLocaleDateString() : ''}
-        </p>
-
-        <div class="event-actions">
-          ${event.registration_link ? `
-            <a href="${event.registration_link}"
-               class="btn btn-outline"
-               target="_blank"
-               rel="noopener">
-              Register
-            </a>` : ''}
-
-          <span class="event-type">${event.event_type}</span>
+        <div class="event-cover-wrap">
+          <img src="${event.cover_image}" class="event-cover" />
         </div>
+
+        <h3 class="section-title">${event.title}</h3>
+
+        <button class="btn btn-outline view-event-btn">
+          View Details
+        </button>
       `;
+
+      // ✅ CLICK → OPEN MODAL
+      card.querySelector('.view-event-btn').addEventListener('click', () => {
+        modalTitle.textContent = event.title;
+
+        modalBody.innerHTML = `
+          <p class="section-desc">${event.excerpt || ''}</p>
+
+          <p class="event-meta">
+            <strong>Location:</strong> ${event.location || '—'}<br>
+            <strong>Date:</strong> ${event.date ? new Date(event.date).toLocaleDateString() : '—'}
+          </p>
+
+          ${event.registration_link ? `
+            <a href="${event.registration_link}" target="_blank" class="btn btn-primary">
+              Register
+            </a>
+          ` : ''}
+        `;
+
+        modal.classList.add('open');
+      });
 
       if (event.event_type === 'Upcoming') {
         upcomingGrid.appendChild(card);
@@ -57,7 +60,9 @@ fetch('/content/events/index.json')
         pastGrid.appendChild(card);
       }
     });
+
+    modalClose.addEventListener('click', () => {
+      modal.classList.remove('open');
+    });
   })
-  .catch(err => {
-    console.warn('Events not rendered:', err.message);
-  });
+  .catch(err => console.warn(err));

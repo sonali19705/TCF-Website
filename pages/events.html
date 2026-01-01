@@ -75,22 +75,22 @@
     <section class="section">
       <div class="section-header">
         <h2 class="section-title">Upcoming Events</h2>
+
+        <!--placeholder upcoming events-->
+        <p class="section-desc">We’re planning workshops, CTFs, and technical sessions.
+          Event details will be announced shortly.Stay tuned.</p>
       </div>
 
       <div id="upcomingEventsGrid" class="events-grid">
 
-        <!-- Placeholder card (shown until real events are added) -->
+        <!-- Placeholder card (shown until real events are added)
         <div class="announcement-card">
           <h3 class="section-title">Events Coming Soon</h3>
           <p class="section-desc">
             We’re planning workshops, CTFs, and technical sessions.
             Event details will be announced shortly.
-          </p>
-
-          <span class="btn btn-outline" style="pointer-events:none; opacity:0.6;">
-            Stay Tuned
-          </span>
-        </div>
+          </p>-->
+      </div>
 
       </div>
     </section>
@@ -162,6 +162,23 @@
     </div>
   </footer>
 
+  <!-- EVENT DETAIL MODAL -->
+  <div id="eventModal" class="gallery-modal">
+    <div class="gallery-modal-content">
+      <span class="gallery-modal-close" id="eventModalClose">&times;</span>
+
+      <h2 id="eventModalTitle" class="section-title"></h2>
+
+      <img id="eventModalImage" class="event-cover" style="margin-bottom:16px; display:none;" />
+
+      <p id="eventModalMeta" class="event-meta"></p>
+
+      <div id="eventModalBody" class="section-desc" style="margin-top:14px;"></div>
+
+      <div id="eventModalActions" style="margin-top:20px;"></div>
+    </div>
+  </div>
+
   <!-- JS -->
   <script>
     const navToggle = document.getElementById('nav-toggle');
@@ -184,5 +201,5 @@
   <script src="/assets/js/main.js" defer></script>
   <script src="/assets/js/events.js" defer></script>
 </body>
+
 </html>
-  
