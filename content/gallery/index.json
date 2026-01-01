@@ -17,6 +17,23 @@
         "/assets/uploads/1714135502527.jpg",
         "/assets/uploads/1714135502591.jpg"
       ]
+    },
+    {
+      "event": "Phishing & Web Attacks Session",
+      "photos": [
+        "/assets/uploads/three.jpg",
+        "/assets/uploads/one.jpg",
+        "/assets/uploads/two.jpg"
+      ],
+      "cover": "/assets/uploads/three.jpg"
+    },
+    {
+      "event": "Expert Session on Security Tools",
+      "cover": "/assets/uploads/img2.jpg",
+      "photos": [
+        "/assets/uploads/img2.jpg",
+        "/assets/uploads/img3.jpg"
+      ]
     }
   ]
 }
