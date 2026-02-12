@@ -317,7 +317,18 @@ p {
   object-fit: cover;
   margin-bottom: 12px;
   display: block;
+
+  /* ✅ FIX: stops particles showing through */
+  background: #0b121c;
+
+  /* ✅ adds a clean cyber ring */
+  border: 2px solid rgba(92, 198, 200, 0.35);
+
+  /* ✅ ensures image stays on top */
+  position: relative;
+  z-index: 2;
 }
+
 
 /* ---------- Member Social Icons ---------- */
 
@@ -357,6 +368,46 @@ p {
   background: rgba(255, 255, 255, 0.06);
   color: var(--primary);
 }
+
+/* Founder Faculty (About Page) */
+.founder-faculty-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.founder-faculty-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(0, 255, 255, 0.35);
+  flex-shrink: 0;
+}
+
+.founder-faculty-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.founder-faculty-name {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #7ffcff; /* matches your neon theme */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.founder-faculty-role {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -419,6 +470,35 @@ p {
 textarea.form-input {
   resize: vertical;
   min-height: 120px;
+}
+
+/* ===== CONTACT DROPDOWN (TCF THEME) ===== */
+select.form-input {
+  background: rgba(10, 18, 28, 0.85);
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(92, 198, 200, 0.45);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-family: "Space Grotesk", sans-serif;
+  outline: none;
+}
+
+/* Option list */
+select.form-input option {
+  background: #0b121c; /* dark theme */
+  color: rgba(255, 255, 255, 0.9);
+  padding: 12px;
+}
+
+/* Placeholder style */
+select.form-input:invalid {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* On focus (glow effect) */
+select.form-input:focus {
+  border-color: rgba(92, 198, 200, 0.45);
+  box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.12);
 }
 
 /* Form submit button spacing */
