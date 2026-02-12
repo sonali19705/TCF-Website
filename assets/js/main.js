@@ -47,7 +47,7 @@ document.addEventListener('submit', function(e){
   // basic email check
   if(!/^\S+@\S+\.\S+$/.test(email)){ alert('Enter a valid email.'); return; }
   // replace with real submission later (Formspree or Netlify Forms)
-  alert('Thanks! Message sent (demo).');
+  alert("Thank you! Your message has been sent.");
   form.reset();
 });
 
