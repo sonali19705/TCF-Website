@@ -396,7 +396,8 @@ p {
   margin: 0;
   font-size: 18px;
   font-weight: 700;
-  color: #7ffcff; /* matches your neon theme */
+  color: #7ffcff;
+  /* matches your neon theme */
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -417,6 +418,7 @@ p {
   gap: 22px;
   margin-top: 18px;
 }
+
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-block;
@@ -493,7 +495,8 @@ select.form-input {
 
 /* Option list */
 select.form-input option {
-  background: #0b121c; /* dark theme */
+  background: #0b121c;
+  /* dark theme */
   color: rgba(255, 255, 255, 0.9);
   padding: 12px;
 }
@@ -1037,5 +1040,28 @@ select.form-input:focus {
 
   .gallery-modal-img {
     height: 240px;
+  }
+
+  .founder-faculty-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .founder-faculty-img {
+    width: 82px;
+    height: 82px;
+  }
+
+  .founder-faculty-name {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  .founder-faculty-role {
+    font-size: 13px;
+    line-height: 1.5;
   }
 }
