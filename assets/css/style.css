@@ -409,6 +409,14 @@ p {
 }
 
 
+
+/* Founder Faculty horizontal layout */
+.founder-faculty-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 18px;
+}
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-block;
